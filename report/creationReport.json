@@ -1,0 +1,344 @@
+{
+  "errors": [],
+  "statistics": [
+    {
+      "owner": "errorJson",
+      "description": "Standard adapter errors available for use",
+      "value": 29
+    },
+    {
+      "owner": "packageJson",
+      "description": "Number of production dependencies",
+      "value": 6
+    },
+    {
+      "owner": "packageJson",
+      "description": "Number of development dependencies",
+      "value": 9
+    },
+    {
+      "owner": "packageJson",
+      "description": "Number of npm scripts",
+      "value": 9
+    },
+    {
+      "owner": "packageJson",
+      "description": "Runtime Library dependency",
+      "value": "^4.9.4"
+    },
+    {
+      "owner": "propertiesSchemaJson",
+      "description": "Adapter properties defined in the propertiesSchema file",
+      "value": 47
+    },
+    {
+      "owner": "adapterJS",
+      "description": "Lines of code generated in adapter.js",
+      "value": 1008
+    },
+    {
+      "owner": "adapterJS",
+      "description": "Number of Functions added to adapter.js",
+      "value": 11
+    },
+    {
+      "owner": "pronghornJson",
+      "description": "Number of Methods added to pronghorn.json",
+      "value": 11
+    },
+    {
+      "owner": "readmeMd",
+      "description": "Number of lines in the README.md",
+      "value": 450
+    },
+    {
+      "owner": "unitTestJS",
+      "description": "Number of lines of code in unit tests",
+      "value": 1039
+    },
+    {
+      "owner": "unitTestJS",
+      "description": "Number of unit tests",
+      "value": 51
+    },
+    {
+      "owner": "integrationTestJS",
+      "description": "Number of lines of code in integration tests",
+      "value": 653
+    },
+    {
+      "owner": "integrationTestJS",
+      "description": "Number of integration tests",
+      "value": 16
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for All entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for Cve entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for Advisory entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for Severity entity",
+      "value": 3
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for Year entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for Latest entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for Product entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for Ios entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for Iosxe entity",
+      "value": 1
+    },
+    {
+      "owner": "actionJson",
+      "description": "Total number of actions",
+      "value": 11
+    },
+    {
+      "owner": "actionJson",
+      "description": "Total number of entities",
+      "value": 9
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for All entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for Cve entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for Advisory entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for Severity entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for Year entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for Latest entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for Product entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for Ios entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for Iosxe entity",
+      "value": 1
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Total number of schemas",
+      "value": 9
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for All entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for Cve entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for Advisory entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for Severity entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for Year entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for Latest entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for Product entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for Ios entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for Iosxe entity",
+      "value": 0
+    },
+    {
+      "owner": "mockdata",
+      "description": "Total number of mock data files",
+      "value": 0
+    },
+    {
+      "owner": "actionJson",
+      "description": "Number of actions for .system entity",
+      "value": 2
+    },
+    {
+      "owner": "schemaJson",
+      "description": "Number of schemas for .system entity",
+      "value": 1
+    },
+    {
+      "owner": "mockdata",
+      "description": "Number of mock data files for .system entity",
+      "value": 1
+    },
+    {
+      "owner": "System",
+      "description": "System entity files",
+      "value": 3
+    },
+    {
+      "owner": "workflows",
+      "description": "Number of workflows",
+      "value": 0
+    },
+    {
+      "owner": "staticFile",
+      "description": "Number of lines of code in adapterBase.js",
+      "value": 484
+    },
+    {
+      "owner": "staticFile",
+      "description": "Number of static files added",
+      "value": 19
+    },
+    {
+      "owner": "Overall",
+      "description": "Total lines of Code",
+      "value": 3184
+    },
+    {
+      "owner": "Overall",
+      "description": "Total Tests",
+      "value": 67
+    },
+    {
+      "owner": "Overall",
+      "description": "Total Files",
+      "value": 48
+    }
+  ],
+  "apiParsingReport": {
+    "no_mockdata": [
+      {
+        "fnName": "getAll",
+        "method": "get",
+        "path": "/all"
+      },
+      {
+        "fnName": "getCveCve_id",
+        "method": "get",
+        "path": "/cve/{cve_id}"
+      },
+      {
+        "fnName": "getAdvisoryAdvisory_id",
+        "method": "get",
+        "path": "/advisory/{advisory_id}"
+      },
+      {
+        "fnName": "getSeveritySeverity",
+        "method": "get",
+        "path": "/severity/{severity}"
+      },
+      {
+        "fnName": "getSeveritySeverityLastpublished",
+        "method": "get",
+        "path": "/severity/{severity}/lastpublished"
+      },
+      {
+        "fnName": "getSeveritySeverityFirstpublished",
+        "method": "get",
+        "path": "/severity/{severity}/firstpublished"
+      },
+      {
+        "fnName": "getYearYear",
+        "method": "get",
+        "path": "/year/{year}"
+      },
+      {
+        "fnName": "getLatestNumber",
+        "method": "get",
+        "path": "/latest/{number}"
+      },
+      {
+        "fnName": "getProduct",
+        "method": "get",
+        "path": "/product"
+      },
+      {
+        "fnName": "getIos",
+        "method": "get",
+        "path": "/ios"
+      },
+      {
+        "fnName": "getIosxe",
+        "method": "get",
+        "path": "/iosxe"
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "callsTotal": 11,
+    "callsConverted": 11,
+    "no_mockdata_num": 11
+  }
+}

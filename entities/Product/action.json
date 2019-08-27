@@ -1,0 +1,13 @@
+{
+  "actions": [
+    {
+      "name": "getProduct",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/security/advisories/product{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    }
+  ]
+}

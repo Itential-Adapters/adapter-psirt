@@ -1,0 +1,31 @@
+{
+  "actions": [
+    {
+      "name": "getSeveritySeverity",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/security/advisories/severity/{pathv1}{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    },
+    {
+      "name": "getSeveritySeverityLastpublished",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/security/advisories/severity/{pathv1}/lastpublished{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    },
+    {
+      "name": "getSeveritySeverityFirstpublished",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/security/advisories/severity/{pathv1}/firstpublished{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    }
+  ]
+}

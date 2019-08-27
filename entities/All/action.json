@@ -1,0 +1,13 @@
+{
+  "actions": [
+    {
+      "name": "getAll",
+      "protocol": "REST",
+      "method": "GET",
+      "entitypath": "{base_path}/{version}/security/advisories/all{query}",
+      "schema": "schema.json",
+      "headers": {},
+      "responseObjects": []
+    }
+  ]
+}

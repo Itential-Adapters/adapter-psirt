@@ -1,0 +1,272 @@
+{
+  "id": "@itentialopensource/adapter-psirt",
+  "type": "Adapter",
+  "export": "Psirt",
+  "displayName": "Psirt",
+  "title": "Psirt",
+  "src": "adapter.js",
+  "roles": [
+    "admin"
+  ],
+  "methods": [
+    {
+      "name": "getAll",
+      "summary": "Used to obtain information about all published security advisories. By default the output is in JSON. To obtain the output in XML use the .xml extension. For example, /advisories/all.xml",
+      "description": "Used to obtain information about all published security advisories. By default the output is in JSON. To obtain the output in XML use the .xml extension. For example, /advisories/all.xml",
+      "input": [],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    },
+    {
+      "name": "getCveCveId",
+      "summary": "Used to obtain an advisory using a given Common Vulnerability Enumerator (CVE). The `cve_id` format is CVE-YYYY-NNNN. For more information about CVE visit http://cve.mitre.org/",
+      "description": "Used to obtain an advisory using a given Common Vulnerability Enumerator (CVE). The `cve_id` format is CVE-YYYY-NNNN. For more information about CVE visit http://cve.mitre.org/",
+      "input": [
+        {
+          "name": "cveId",
+          "type": "string",
+          "info": "CVE Identifier (i.e., CVE-YYYY-NNNN)",
+          "required": true
+        }
+      ],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    },
+    {
+      "name": "getAdvisoryAdvisoryId",
+      "summary": "Used to obtain an advisory given its advisory ID `advisory_id` (i.e., cisco-sa-20180221-ucdm)",
+      "description": "Used to obtain an advisory given its advisory ID `advisory_id` (i.e., cisco-sa-20180221-ucdm)",
+      "input": [
+        {
+          "name": "advisoryId",
+          "type": "string",
+          "info": "advisory ID",
+          "required": true
+        }
+      ],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    },
+    {
+      "name": "getSeveritySeverity",
+      "summary": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low).",
+      "description": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low).",
+      "input": [
+        {
+          "name": "severity",
+          "type": "string",
+          "info": "Critical, High, Medium, Low",
+          "required": true
+        }
+      ],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    },
+    {
+      "name": "getSeveritySeverityLastpublished",
+      "summary": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low).",
+      "description": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low).",
+      "input": [
+        {
+          "name": "severity",
+          "type": "string",
+          "info": "Used to obtain all advisories that have a security impact rating of critical",
+          "required": true
+        },
+        {
+          "name": "startDate",
+          "type": "string",
+          "info": "",
+          "required": true
+        },
+        {
+          "name": "endDate",
+          "type": "string",
+          "info": "",
+          "required": true
+        }
+      ],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    },
+    {
+      "name": "getSeveritySeverityFirstpublished",
+      "summary": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low) and additionally filter based of firstpublished start date and enddate.",
+      "description": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low) and additionally filter based of firstpublished start date and enddate.",
+      "input": [
+        {
+          "name": "severity",
+          "type": "string",
+          "info": "Used to obtain all advisories that have a security impact rating of critical",
+          "required": true
+        },
+        {
+          "name": "startDate",
+          "type": "string",
+          "info": "",
+          "required": true
+        },
+        {
+          "name": "endDate",
+          "type": "string",
+          "info": "",
+          "required": true
+        }
+      ],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    },
+    {
+      "name": "getYearYear",
+      "summary": "Used to obtain all security advisories that have were orginally published in a specific year `YYYY`.",
+      "description": "Used to obtain all security advisories that have were orginally published in a specific year `YYYY`.",
+      "input": [
+        {
+          "name": "year",
+          "type": "string",
+          "info": "The four digit year.",
+          "required": true
+        }
+      ],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    },
+    {
+      "name": "getLatestNumber",
+      "summary": "Used to obtain all the latest security advisories given an absolute number. For instance, the latest 10 or latest 5.",
+      "description": "Used to obtain all the latest security advisories given an absolute number. For instance, the latest 10 or latest 5.",
+      "input": [
+        {
+          "name": "number",
+          "type": "number",
+          "info": "An absolute number to obtain the latest security advisories.",
+          "required": true
+        }
+      ],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    },
+    {
+      "name": "getProduct",
+      "summary": "Used to obtain all the advisories that affects the given product name.",
+      "description": "Used to obtain all the advisories that affects the given product name.",
+      "input": [
+        {
+          "name": "product",
+          "type": "string",
+          "info": "An product name to obtain security advisories that matches given product name.",
+          "required": true
+        }
+      ],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    },
+    {
+      "name": "getIos",
+      "summary": "Used to obtain all advisories that affects the given ios version",
+      "description": "Used to obtain all advisories that affects the given ios version",
+      "input": [
+        {
+          "name": "version",
+          "type": "string",
+          "info": "IOS version to obtain security advisories",
+          "required": true
+        }
+      ],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    },
+    {
+      "name": "getIosxe",
+      "summary": "Used to obtain all advisories that affects the given ios version",
+      "description": "Used to obtain all advisories that affects the given ios version",
+      "input": [
+        {
+          "name": "version",
+          "type": "string",
+          "info": "IOS version to obtain security advisories",
+          "required": true
+        }
+      ],
+      "output": {
+        "name": "result",
+        "type": "object",
+        "description": "A JSON Object containing status, code and the result"
+      },
+      "roles": [
+        "admin"
+      ],
+      "task": true
+    }
+  ]
+}

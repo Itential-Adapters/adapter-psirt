@@ -1,0 +1,41 @@
+{
+  "id": "Adapter-psirt",
+  "properties": {
+    "protocol": "https",
+    "host": "api.cisco.com",
+    "port": 443,
+    "version": "",
+    "base_path": "/",
+    "stub": true,
+    "authentication": {
+      "auth_method": "no_authentication"
+    },
+    "healthcheck": {
+      "type": "startup",
+      "protocol": "REST",
+      "URI_Path": "/security/advisories/all"
+    },
+    "request": {
+      "number_retries": 3,
+      "limit_retry_error": 0,
+      "attempt_timeout": 5000,
+      "healthcheck_on_timeout": true,
+      "archiving": false
+    },
+    "throttle": {
+      "throttle_enabled": false
+    },
+    "proxy": {
+      "enabled": false
+    },
+    "ssl": {
+      "enabled": false
+    },
+    "cache_location": "none"
+  },
+  "type": "Psirt",
+  "groups": [],
+  "brokers": [],
+  "logLevel": "none",
+  "timeout": 120000
+}
