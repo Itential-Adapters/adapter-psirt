@@ -25,11 +25,11 @@ const attemptTimeout = 100000;
 
 // these variables can be changed to run in integrated mode so easier to set them here
 // always check these in with bogus data!!!
-const host = 'api.cisco.com';
+const host = 'replace.hostorip.here';
 const username = 'username';
 const password = 'password';
-const protocol = 'https';
-const port = 443;
+const protocol = 'http';
+const port = 80;
 const sslenable = false;
 const sslinvalid = false;
 
