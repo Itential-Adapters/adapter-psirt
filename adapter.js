@@ -234,14 +234,14 @@ class Psirt extends AdapterBaseCl {
   }
 
   /**
-   * @summary Used to obtain information about all published security advisories. By default the output is in JSON. To obtain the output in XML use the .xml extension. For example, /advisories/all.xml
+   * @summary Obtain all security advisories.
    *
-   * @function getAll
+   * @function getAllAdvisories
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getAll(callback) {
-    const meth = 'adapter-getAll';
+  getAllAdvisories(callback) {
+    const meth = 'adapter-getAllAdvisories';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -255,7 +255,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('All', 'getAll', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('All', 'getAllAdvisories', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -263,7 +263,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAll'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAllAdvisories'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }
@@ -280,15 +280,15 @@ class Psirt extends AdapterBaseCl {
   }
 
   /**
-   * @summary Used to obtain an advisory using a given Common Vulnerability Enumerator (CVE). The `cve_id` format is CVE-YYYY-NNNN. For more information about CVE visit http://cve.mitre.org/
+   * @summary Obtain an advisory using a given Common Vulnerability Enumerator (CVE).
    *
-   * @function getCveCveId
+   * @function getAdvisoryByCveId
    * @param {string} cveId - CVE Identifier (i.e., CVE-YYYY-NNNN)
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getCveCveId(cveId, callback) {
-    const meth = 'adapter-getCveCveId';
+  getAdvisoryByCveId(cveId, callback) {
+    const meth = 'adapter-getAdvisoryByCveId';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -325,7 +325,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('Cve', 'getCveCveId', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('Cve', 'getAdvisoryByCveId', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -333,7 +333,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getCveCveId'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdvisoryByCveId'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }
@@ -350,15 +350,15 @@ class Psirt extends AdapterBaseCl {
   }
 
   /**
-   * @summary Used to obtain an advisory given its advisory ID `advisory_id` (i.e., cisco-sa-20180221-ucdm)
+   * @summary Obtain an advisory given its advisory ID.
    *
-   * @function getAdvisoryAdvisoryId
+   * @function getAdvisoryByAdvisoryId
    * @param {string} advisoryId - advisory ID
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getAdvisoryAdvisoryId(advisoryId, callback) {
-    const meth = 'adapter-getAdvisoryAdvisoryId';
+  getAdvisoryByAdvisoryId(advisoryId, callback) {
+    const meth = 'adapter-getAdvisoryByAdvisoryId';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -395,7 +395,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('Advisory', 'getAdvisoryAdvisoryId', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('Advisory', 'getAdvisoryByAdvisoryId', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -403,7 +403,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdvisoryAdvisoryId'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdvisoryByAdvisoryId'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }
@@ -422,13 +422,13 @@ class Psirt extends AdapterBaseCl {
   /**
    * @summary Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low).
    *
-   * @function getSeveritySeverity
+   * @function getAdvisoryBySeverity
    * @param {string} severity - Critical, High, Medium, Low
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getSeveritySeverity(severity = 'critical', callback) {
-    const meth = 'adapter-getSeveritySeverity';
+  getAdvisoryBySeverity(severity = 'critical', callback) {
+    const meth = 'adapter-getAdvisoryBySeverity';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -465,7 +465,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('Severity', 'getSeveritySeverity', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('Severity', 'getAdvisoryBySeverity', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -473,7 +473,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSeveritySeverity'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdvisoryBySeverity'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }
@@ -492,15 +492,15 @@ class Psirt extends AdapterBaseCl {
   /**
    * @summary Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low).
    *
-   * @function getSeveritySeverityLastpublished
+   * @function getAdvisoryBySeverityLastpublished
    * @param {string} severity - Used to obtain all advisories that have a security impact rating of critical
    * @param {string} startDate - startDate param
    * @param {string} endDate - endDate param
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getSeveritySeverityLastpublished(severity = 'critical', startDate, endDate, callback) {
-    const meth = 'adapter-getSeveritySeverityLastpublished';
+  getAdvisoryBySeverityLastpublished(severity = 'critical', startDate, endDate, callback) {
+    const meth = 'adapter-getAdvisoryBySeverityLastpublished';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -547,7 +547,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('Severity', 'getSeveritySeverityLastpublished', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('Severity', 'getAdvisoryBySeverityLastpublished', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -555,7 +555,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSeveritySeverityLastpublished'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdvisoryBySeverityLastpublished'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }
@@ -574,15 +574,15 @@ class Psirt extends AdapterBaseCl {
   /**
    * @summary Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low) and additionally filter based of firstpublished start date and enddate.
    *
-   * @function getSeveritySeverityFirstpublished
+   * @function getAdvisoryBySeverityFirstpublished
    * @param {string} severity - Used to obtain all advisories that have a security impact rating of critical
    * @param {string} startDate - startDate param
    * @param {string} endDate - endDate param
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getSeveritySeverityFirstpublished(severity = 'critical', startDate, endDate, callback) {
-    const meth = 'adapter-getSeveritySeverityFirstpublished';
+  getAdvisoryBySeverityFirstpublished(severity = 'critical', startDate, endDate, callback) {
+    const meth = 'adapter-getAdvisoryBySeverityFirstpublished';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -629,7 +629,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('Severity', 'getSeveritySeverityFirstpublished', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('Severity', 'getAdvisoryBySeverityFirstpublished', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -637,7 +637,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getSeveritySeverityFirstpublished'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdvisoryBySeverityFirstpublished'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }
@@ -654,15 +654,15 @@ class Psirt extends AdapterBaseCl {
   }
 
   /**
-   * @summary Used to obtain all security advisories that have were orginally published in a specific year `YYYY`.
+   * @summary Obtain all security advisories that have were originally published in a specific year.
    *
-   * @function getYearYear
+   * @function getAdvisoryByYear
    * @param {string} year - The four digit year.
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getYearYear(year, callback) {
-    const meth = 'adapter-getYearYear';
+  getAdvisoryByYear(year, callback) {
+    const meth = 'adapter-getAdvisoryByYear';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -699,7 +699,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('Year', 'getYearYear', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('Year', 'getAdvisoryByYear', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -707,7 +707,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getYearYear'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdvisoryByYear'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }
@@ -724,15 +724,15 @@ class Psirt extends AdapterBaseCl {
   }
 
   /**
-   * @summary Used to obtain all the latest security advisories given an absolute number. For instance, the latest 10 or latest 5.
+   * @summary Obtain all the latest security advisories given an absolute number.
    *
-   * @function getLatestNumber
+   * @function getLatestAdvisoryByNumber
    * @param {number} number - An absolute number to obtain the latest security advisories.
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getLatestNumber(number, callback) {
-    const meth = 'adapter-getLatestNumber';
+  getLatestAdvisoryByNumber(number, callback) {
+    const meth = 'adapter-getLatestAdvisoryByNumber';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -769,7 +769,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('Latest', 'getLatestNumber', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('Latest', 'getLatestAdvisoryByNumber', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -777,7 +777,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getLatestNumber'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getLatestAdvisoryByNumber'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }
@@ -794,15 +794,15 @@ class Psirt extends AdapterBaseCl {
   }
 
   /**
-   * @summary Used to obtain all the advisories that affects the given product name.
+   * @summary Obtain all the advisories that affects the given product name.
    *
-   * @function getProduct
+   * @function getAdvisoryByProductName
    * @param {string} product - An product name to obtain security advisories that matches given product name.
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getProduct(product, callback) {
-    const meth = 'adapter-getProduct';
+  getAdvisoryByProductName(product, callback) {
+    const meth = 'adapter-getAdvisoryByProductName';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -839,7 +839,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('Product', 'getProduct', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('Product', 'getAdvisoryByProductName', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -847,7 +847,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getProduct'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdvisoryByProductName'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }
@@ -864,15 +864,15 @@ class Psirt extends AdapterBaseCl {
   }
 
   /**
-   * @summary Used to obtain all advisories that affects the given ios version
+   * @summary Obtain all advisories that affects the given ios version
    *
-   * @function getIos
+   * @function getAdvisoryByIOSVersion
    * @param {string} version - IOS version to obtain security advisories
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getIos(version, callback) {
-    const meth = 'adapter-getIos';
+  getAdvisoryByIOSVersion(version, callback) {
+    const meth = 'adapter-getAdvisoryByIOSVersion';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -909,7 +909,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('Ios', 'getIos', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('Ios', 'getAdvisoryByIOSVersion', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -917,7 +917,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getIos'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdvisoryByIOSVersion'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }
@@ -934,15 +934,15 @@ class Psirt extends AdapterBaseCl {
   }
 
   /**
-   * @summary Used to obtain all advisories that affects the given ios version
+   * @summary Obtain all advisories that affects the given ios version.
    *
-   * @function getIosxe
+   * @function getAdvisoryByIOSXEVersion
    * @param {string} version - IOS version to obtain security advisories
    * @param {getCallback} callback - a callback function to return the result
    */
   /* YOU CAN CHANGE THE PARAMETERS YOU TAKE IN HERE AND IN THE pronghorn.json FILE */
-  getIosxe(version, callback) {
-    const meth = 'adapter-getIosxe';
+  getAdvisoryByIOSXEVersion(version, callback) {
+    const meth = 'adapter-getAdvisoryByIOSXEVersion';
     const origin = `${this.id}-${meth}`;
     log.trace(origin);
 
@@ -979,7 +979,7 @@ class Psirt extends AdapterBaseCl {
     try {
       // Make the call -
       // identifyRequest(entity, action, requestObj, returnDataFlag, callback)
-      return this.requestHandlerInst.identifyRequest('Iosxe', 'getIosxe', reqObj, true, (irReturnData, irReturnError) => {
+      return this.requestHandlerInst.identifyRequest('Iosxe', 'getAdvisoryByIOSXEVersion', reqObj, true, (irReturnData, irReturnError) => {
         // if we received an error or their is no response on the results
         // return an error
         if (irReturnError) {
@@ -987,7 +987,7 @@ class Psirt extends AdapterBaseCl {
           return callback(null, irReturnError);
         }
         if (!Object.hasOwnProperty.call(irReturnData, 'response')) {
-          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getIosxe'], null, null, null);
+          const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Invalid Response', ['getAdvisoryByIOSXEVersion'], null, null, null);
           log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
           return callback(null, errorObj);
         }

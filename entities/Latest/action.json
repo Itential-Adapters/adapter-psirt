@@ -1,13 +1,19 @@
 {
   "actions": [
     {
-      "name": "getLatestNumber",
+      "name": "getLatestAdvisoryByNumber",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/security/advisories/latest/{pathv1}{query}",
       "schema": "schema.json",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": "mockdatafiles/getLatestAdvisoryByNumber-default.json"
+        }
+      ]
     }
   ]
 }

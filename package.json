@@ -37,7 +37,7 @@
   "author": "Itential",
   "homepage": "https://gitlab.com:itentialopensource/adapters/adapter-psirt#readme",
   "dependencies": {
-    "@itentialopensource/adapter-utils": "^4.9.4",
+    "@itentialopensource/adapter-utils": "^4.23.0",
     "ajv": "^6.10.0",
     "fs-extra": "^7.0.0",
     "package-json-validator": "^0.6.3",

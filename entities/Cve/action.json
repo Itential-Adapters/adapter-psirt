@@ -1,13 +1,19 @@
 {
   "actions": [
     {
-      "name": "getCveCveId",
+      "name": "getAdvisoryByCveId",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/security/advisories/cve/{pathv1}{query}",
       "schema": "schema.json",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": "mockdatafiles/getAdvisoryByCveId-default.json"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,136 @@
+{
+  "advisories": [
+    {
+      "advisoryId": "cisco-sa-20191016-wlc-pathtrav",
+      "advisoryTitle": "Cisco Wireless LAN Controller Path Traversal Vulnerability",
+      "bugIDs": [
+        "CSCvq59683"
+      ],
+      "ipsSignatures": [
+        "NA"
+      ],
+      "cves": [
+        "CVE-2019-15266"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20191016-wlc-pathtrav/cvrf/cisco-sa-20191016-wlc-pathtrav_cvrf.xml",
+      "cvssBaseScore": "4.4",
+      "cwe": [
+        "CWE-22"
+      ],
+      "firstPublished": "2019-10-16T16:00:00-0700",
+      "lastUpdated": "2019-10-24T13:48:34-0700",
+      "productNames": [
+        "Cisco Wireless LAN Controller (WLC) "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191016-wlc-pathtrav",
+      "sir": "Medium",
+      "summary": "<p>A vulnerability in the CLI of Cisco&nbsp;Wireless LAN Controller (WLC) Software could allow an authenticated, local attacker to view system files that should be restricted.</p>\n<p>This vulnerability is due to improper sanitization of user-supplied input in command-line parameters that describe filenames. An attacker could exploit this vulnerability by using directory traversal techniques to submit a path to a desired file location. A successful exploit could allow the attacker to view system files that may contain sensitive information.</p>\n<p>Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.</p>\n<p>This advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191016-wlc-pathtrav\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191016-wlc-pathtrav</a></p>"
+    },
+    {
+      "advisoryId": "cisco-sa-20190220-hyperflex-injection",
+      "advisoryTitle": "Cisco HyperFlex Software Command Injection Vulnerability",
+      "bugIDs": [
+        "CSCvj95606",
+        "CSCvq24176"
+      ],
+      "ipsSignatures": [
+        "NA"
+      ],
+      "cves": [
+        "CVE-2018-15380"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20190220-hyperflex-injection/cvrf/cisco-sa-20190220-hyperflex-injection_cvrf.xml",
+      "cvssBaseScore": "8.8",
+      "cwe": [
+        "CWE-78"
+      ],
+      "firstPublished": "2019-02-20T16:00:00-0800",
+      "lastUpdated": "2019-10-23T18:41:14-0700",
+      "productNames": [
+        "Cisco HyperFlex HX Data Platform "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190220-hyperflex-injection",
+      "sir": "High",
+      "summary": "<p>A vulnerability in the cluster service manager of Cisco HyperFlex Software could allow an unauthenticated, adjacent attacker to execute commands as the <em>root</em> user.</p>\n<p>The vulnerability is due to insufficient input validation. An attacker could exploit this vulnerability by connecting to the cluster service manager and injecting commands into the bound process. A successful exploit could allow the attacker to run commands on the affected host as the <em>root</em> user.</p>\n<p>Cisco has released software updates that address this vulnerability. There are workarounds that address this vulnerability.</p>\n<p>This advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190220-hyperflex-injection\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190220-hyperflex-injection</a></p>"
+    },
+    {
+      "advisoryId": "cisco-sa-20191002-ucm-secbypass",
+      "advisoryTitle": "Cisco Unified Communications Manager Security Bypass Vulnerability",
+      "bugIDs": [
+        "CSCvp14434"
+      ],
+      "ipsSignatures": [
+        "NA"
+      ],
+      "cves": [
+        "CVE-2019-15272"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20191002-ucm-secbypass/cvrf/cisco-sa-20191002-ucm-secbypass_cvrf.xml",
+      "cvssBaseScore": "6.5",
+      "cwe": [
+        "CWE-264"
+      ],
+      "firstPublished": "2019-10-02T16:00:00-0700",
+      "lastUpdated": "2019-10-23T18:01:54-0700",
+      "productNames": [
+        "Cisco Unified Communications Manager "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191002-ucm-secbypass",
+      "sir": "Medium",
+      "summary": "<p>A vulnerability in the web-based interface of Cisco Unified Communications Manager and Cisco&nbsp;Unified Communications Manager Session Management Edition (SME) could allow an unauthenticated, remote attacker to bypass security restrictions.\n<p>The vulnerability is due to improper handling of malformed HTTP methods. An attacker could exploit this vulnerability by sending a crafted HTTP request to the affected system. A successful exploit could allow the attacker to gain unauthorized access to the system.</p></p>\n<p>Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.<br />\n<br />\nThis advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191002-ucm-secbypass\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191002-ucm-secbypass</a></p>"
+    },
+    {
+      "advisoryId": "cisco-sa-20191002-cucm-xxe",
+      "advisoryTitle": "Cisco Unified Communications Manager XML External Expansion Vulnerability",
+      "bugIDs": [
+        "CSCvp46079"
+      ],
+      "ipsSignatures": [
+        "NA"
+      ],
+      "cves": [
+        "CVE-2019-12711"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20191002-cucm-xxe/cvrf/cisco-sa-20191002-cucm-xxe_cvrf.xml",
+      "cvssBaseScore": "6.1",
+      "cwe": [
+        "CWE-611"
+      ],
+      "firstPublished": "2019-10-02T16:00:00-0700",
+      "lastUpdated": "2019-10-23T17:53:28-0700",
+      "productNames": [
+        "Cisco Unified Communications Manager "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191002-cucm-xxe",
+      "sir": "Medium",
+      "summary": "<p>A vulnerability in the web-based interface of Cisco&nbsp;Unified Communications Manager and Cisco&nbsp;Unified Communications Manager Session Management Edition (SME) could allow an unauthenticated, remote attacker to access sensitive information or cause a denial of service (DoS) condition.</p>\n<p>The vulnerability is due to improper restrictions on XML entities. An attacker could exploit this vulnerability by sending malicious requests to an affected system that contain references in XML entities. A successful exploit could allow the attacker to retrieve files from the local system, resulting in the disclosure of sensitive information, or cause the application to consume available resources, resulting in a DoS condition.</p>\n<p>Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.</p>\n<p>This advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191002-cucm-xxe\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191002-cucm-xxe</a></p>"
+    },
+    {
+      "advisoryId": "cisco-sa-20191002-asa-dos",
+      "advisoryTitle": "Cisco Adaptive Security Appliance Software and Firepower Threat Defense Software FTP Inspection Denial of Service Vulnerability",
+      "bugIDs": [
+        "CSCvo83169"
+      ],
+      "ipsSignatures": [
+        "NA"
+      ],
+      "cves": [
+        "CVE-2019-12673"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20191002-asa-dos/cvrf/cisco-sa-20191002-asa-dos_cvrf.xml",
+      "cvssBaseScore": "8.6",
+      "cwe": [
+        "CWE-119"
+      ],
+      "firstPublished": "2019-10-02T16:00:00-0700",
+      "lastUpdated": "2019-10-18T18:18:39-0700",
+      "productNames": [
+        "Cisco Adaptive Security Appliance (ASA) Software ",
+        "Cisco Firepower Threat Defense Software "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191002-asa-dos",
+      "sir": "High",
+      "summary": "<p>A vulnerability in the FTP inspection engine of Cisco&nbsp;Adaptive Security (ASA) Software and Cisco&nbsp;Firepower Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.</p>\n<p>The vulnerability is due to insufficient validation of FTP data. An attacker could exploit this vulnerability by sending malicious FTP traffic through an affected device. A successful exploit could allow the attacker to cause a DoS condition on the affected device.</p>\n<p>Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.</p>\n<p>This advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191002-asa-dos\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191002-asa-dos</a></p>\nThis advisory is part of the October 2019 Cisco ASA, FMC, and FTD Software Security Advisory Bundled Publication, which includes 10 Cisco Security Advisories that describe 18 vulnerabilities. For a complete list of the advisories and links to them, see <a href=\"http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-72541\">Cisco Event Response: October 2019 Cisco ASA, FMC, and FTD Software Security Advisory Bundled Publication</a>."
+    }
+  ]
+}

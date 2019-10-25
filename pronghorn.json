@@ -10,9 +10,9 @@
   ],
   "methods": [
     {
-      "name": "getAll",
-      "summary": "Used to obtain information about all published security advisories. By default the output is in JSON. To obtain the output in XML use the .xml extension. For example, /advisories/all.xml",
-      "description": "Used to obtain information about all published security advisories. By default the output is in JSON. To obtain the output in XML use the .xml extension. For example, /advisories/all.xml",
+      "name": "getAllAdvisories",
+      "summary": "Obtain all published security advisories.",
+      "description": "Obtain all published security advisories.",
       "input": [],
       "output": {
         "name": "result",
@@ -22,12 +22,16 @@
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "GET",
+        "path": "/getAllAdvisories"
+      },
       "task": true
     },
     {
-      "name": "getCveCveId",
-      "summary": "Used to obtain an advisory using a given Common Vulnerability Enumerator (CVE). The `cve_id` format is CVE-YYYY-NNNN. For more information about CVE visit http://cve.mitre.org/",
-      "description": "Used to obtain an advisory using a given Common Vulnerability Enumerator (CVE). The `cve_id` format is CVE-YYYY-NNNN. For more information about CVE visit http://cve.mitre.org/",
+      "name": "getAdvisoryByCveId",
+      "summary": "Obtain an advisory using a given Common Vulnerability Enumerator (CVE).",
+      "description": "Obtain an advisory using a given Common Vulnerability Enumerator (CVE).",
       "input": [
         {
           "name": "cveId",
@@ -41,14 +45,18 @@
         "type": "object",
         "description": "A JSON Object containing status, code and the result"
       },
+      "route": {
+        "verb": "POST",
+        "path": "/getAdvisoryByCveId"
+      },
       "roles": [
         "admin"
       ],
       "task": true
     },
     {
-      "name": "getAdvisoryAdvisoryId",
-      "summary": "Used to obtain an advisory given its advisory ID `advisory_id` (i.e., cisco-sa-20180221-ucdm)",
+      "name": "getAdvisoryByAdvisoryId",
+      "summary": "Obtain an advisory given its advisory ID.",
       "description": "Used to obtain an advisory given its advisory ID `advisory_id` (i.e., cisco-sa-20180221-ucdm)",
       "input": [
         {
@@ -66,11 +74,15 @@
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAdvisoryByAdvisoryId"
+      },
       "task": true
     },
     {
-      "name": "getSeveritySeverity",
-      "summary": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low).",
+      "name": "getAdvisoryBySeverity",
+      "summary": "Obtain all security advisories for a given security impact rating (critical, high, medium, or low).",
       "description": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low).",
       "input": [
         {
@@ -85,14 +97,18 @@
         "type": "object",
         "description": "A JSON Object containing status, code and the result"
       },
+      "route": {
+        "verb": "POST",
+        "path": "/getAdvisoryBySeverity"
+      },
       "roles": [
         "admin"
       ],
       "task": true
     },
     {
-      "name": "getSeveritySeverityLastpublished",
-      "summary": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low).",
+      "name": "getAdvisoryBySeverityLastpublished",
+      "summary": "Obtain all security advisories for a given security impact rating and additionally filter based of lastpublished start date and enddate.",
       "description": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low).",
       "input": [
         {
@@ -122,11 +138,15 @@
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAdvisoryBySeverityLastpublished"
+      },
       "task": true
     },
     {
-      "name": "getSeveritySeverityFirstpublished",
-      "summary": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low) and additionally filter based of firstpublished start date and enddate.",
+      "name": "getAdvisoryBySeverityFirstpublished",
+      "summary": "Obtain all security advisories for a given security impact rating and additionally filter based of firstpublished start date and enddate.",
       "description": "Used to obtain all security advisories for a given security impact rating (critical, high, medium, or low) and additionally filter based of firstpublished start date and enddate.",
       "input": [
         {
@@ -156,12 +176,16 @@
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAdvisoryBySeverityFirstpublished"
+      },
       "task": true
     },
     {
-      "name": "getYearYear",
-      "summary": "Used to obtain all security advisories that have were orginally published in a specific year `YYYY`.",
-      "description": "Used to obtain all security advisories that have were orginally published in a specific year `YYYY`.",
+      "name": "getAdvisoryByYear",
+      "summary": "Obtain all security advisories that have were originally published in a specific year.",
+      "description": "Obtain all security advisories that have were originally published in a specific year.",
       "input": [
         {
           "name": "year",
@@ -178,11 +202,15 @@
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAdvisoryByYear"
+      },
       "task": true
     },
     {
-      "name": "getLatestNumber",
-      "summary": "Used to obtain all the latest security advisories given an absolute number. For instance, the latest 10 or latest 5.",
+      "name": "getLatestAdvisoryByNumber",
+      "summary": "Obtain all the latest security advisories given an absolute number.",
       "description": "Used to obtain all the latest security advisories given an absolute number. For instance, the latest 10 or latest 5.",
       "input": [
         {
@@ -200,11 +228,15 @@
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getLatestAdvisoryByNumber"
+      },
       "task": true
     },
     {
-      "name": "getProduct",
-      "summary": "Used to obtain all the advisories that affects the given product name.",
+      "name": "getAdvisoryByProductName",
+      "summary": "Obtain all the advisories that affects the given product name.",
       "description": "Used to obtain all the advisories that affects the given product name.",
       "input": [
         {
@@ -222,11 +254,15 @@
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAdvisoryByProductName"
+      },
       "task": true
     },
     {
-      "name": "getIos",
-      "summary": "Used to obtain all advisories that affects the given ios version",
+      "name": "getAdvisoryByIOSVersion",
+      "summary": "Obtain all advisories that affects the given ios version",
       "description": "Used to obtain all advisories that affects the given ios version",
       "input": [
         {
@@ -244,17 +280,21 @@
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAdvisoryByIOSVersion"
+      },
       "task": true
     },
     {
-      "name": "getIosxe",
-      "summary": "Used to obtain all advisories that affects the given ios version",
-      "description": "Used to obtain all advisories that affects the given ios version",
+      "name": "getAdvisoryByIOSXEVersion",
+      "summary": "Obtain all advisories that affects the given iosxe version.",
+      "description": "Used to obtain all advisories that affects the given iosxe version",
       "input": [
         {
           "name": "version",
           "type": "string",
-          "info": "IOS version to obtain security advisories",
+          "info": "IOSXE version to obtain security advisories",
           "required": true
         }
       ],
@@ -266,6 +306,10 @@
       "roles": [
         "admin"
       ],
+      "route": {
+        "verb": "POST",
+        "path": "/getAdvisoryByIOSXEVersion"
+      },
       "task": true
     }
   ]

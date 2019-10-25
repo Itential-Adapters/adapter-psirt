@@ -8,9 +8,9 @@
     "ph_request_type": {
       "type": "string",
       "description": "type of request (internal to adapter)",
-      "default": "getAll",
+      "default": "getAllAdvisories",
       "enum": [
-        "getAll"
+        "getAllAdvisories"
       ],
       "external_name": "ph_request_type"
     }

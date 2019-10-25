@@ -1,13 +1,19 @@
 {
   "actions": [
     {
-      "name": "getYearYear",
+      "name": "getAdvisoryByYear",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/security/advisories/year/{pathv1}{query}",
       "schema": "schema.json",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": "mockdatafiles/getAdvisoryByYear-default.json"
+        }
+      ]
     }
   ]
 }

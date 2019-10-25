@@ -1,13 +1,19 @@
 {
   "actions": [
     {
-      "name": "getAdvisoryAdvisoryId",
+      "name": "getAdvisoryByAdvisoryId",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/security/advisories/advisory/{pathv1}{query}",
       "schema": "schema.json",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": "mockdatafiles/getAdvisoryByAdvisoryId-default.json"
+        }
+      ]
     }
   ]
 }

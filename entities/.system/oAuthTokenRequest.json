@@ -1,0 +1,45 @@
+{
+    "$id": "oAuthTokenRequest.json",
+    "type": "object",
+    "schema": "http://json-schema.org/draft-07/schema#",
+    "translate": true,
+    "dynamicfields": true,
+    "properties": { 
+      "ph_request_type": {
+        "type": "string",
+        "description": "type of request (internal to adapter)", 
+        "default": "getToken", 
+        "enum": [ "getToken" ], 
+        "external_name": "ph_request_type"
+      },
+      "grant_type": {
+        "type": "string",
+        "description": "type of auth",
+        "default": "client_credentials", 
+        "external_name": "grant_type"
+      }, 
+      "client_secret": {
+        "type": "string",
+        "description": "secret used during login",
+        "default": "your client_secret",
+        "external_name": "client_secret"
+      }, 
+      "client_id": {
+         "type": "string",
+         "description": "client application id",
+        "default": "your client_id",
+        "external_name": "client_id"
+      }, 
+      "username": { 
+        "type": "string",
+        "description": "username to log in with",
+        "external_name": "username"
+      },
+      "password": {
+        "type": "string",
+        "description": "password to log in with",
+        "external_name": "password"
+      }
+    },
+    "definitions": {}
+  } 

@@ -8,9 +8,9 @@
     "ph_request_type": {
       "type": "string",
       "description": "type of request (internal to adapter)",
-      "default": "getIosxe",
+      "default": "getAdvisoryByIOSXEVersion",
       "enum": [
-        "getIosxe"
+        "getAdvisoryByIOSXEVersion"
       ],
       "external_name": "ph_request_type"
     }

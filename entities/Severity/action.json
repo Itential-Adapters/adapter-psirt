@@ -1,31 +1,49 @@
 {
   "actions": [
     {
-      "name": "getSeveritySeverity",
+      "name": "getAdvisoryBySeverity",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/security/advisories/severity/{pathv1}{query}",
       "schema": "schema.json",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": "mockdatafiles/getAdvisoryBySeverity-default.json"
+        }
+      ]
     },
     {
-      "name": "getSeveritySeverityLastpublished",
+      "name": "getAdvisoryBySeverityLastpublished",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/security/advisories/severity/{pathv1}/lastpublished{query}",
       "schema": "schema.json",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": "mockdatafiles/getAdvisoryBySeverityLastpublished-default.json"
+        }
+      ]
     },
     {
-      "name": "getSeveritySeverityFirstpublished",
+      "name": "getAdvisoryBySeverityFirstpublished",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/security/advisories/severity/{pathv1}/firstpublished{query}",
       "schema": "schema.json",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": "mockdatafiles/getAdvisoryBySeverityFirstpublished-default.json"
+        }
+      ]
     }
   ]
 }

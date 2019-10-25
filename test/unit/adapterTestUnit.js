@@ -665,10 +665,10 @@ describe('[unit] Psirt Adapter Test', () => {
     -----------------------------------------------------------------------
     */
 
-    describe('#getAll - errors', () => {
-      it('should have a getAll function', (done) => {
+    describe('#getAllAdvisories - errors', () => {
+      it('should have a getAllAdvisories function', (done) => {
         try {
-          assert.equal(true, typeof a.getAll === 'function');
+          assert.equal(true, typeof a.getAllAdvisories === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -677,10 +677,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getCveCveId - errors', () => {
-      it('should have a getCveCveId function', (done) => {
+    describe('#getAdvisoryByCveId - errors', () => {
+      it('should have a getAdvisoryByCveId function', (done) => {
         try {
-          assert.equal(true, typeof a.getCveCveId === 'function');
+          assert.equal(true, typeof a.getAdvisoryByCveId === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -689,10 +689,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing cveId', (done) => {
         try {
-          a.getCveCveId(null, (data, error) => {
+          a.getAdvisoryByCveId(null, (data, error) => {
             try {
               const displayE = 'cveId is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getCveCveId', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryByCveId', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -706,10 +706,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getAdvisoryAdvisoryId - errors', () => {
-      it('should have a getAdvisoryAdvisoryId function', (done) => {
+    describe('#getAdvisoryByAdvisoryId - errors', () => {
+      it('should have a getAdvisoryByAdvisoryId function', (done) => {
         try {
-          assert.equal(true, typeof a.getAdvisoryAdvisoryId === 'function');
+          assert.equal(true, typeof a.getAdvisoryByAdvisoryId === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -718,10 +718,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing advisoryId', (done) => {
         try {
-          a.getAdvisoryAdvisoryId(null, (data, error) => {
+          a.getAdvisoryByAdvisoryId(null, (data, error) => {
             try {
               const displayE = 'advisoryId is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryAdvisoryId', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryByAdvisoryId', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -735,10 +735,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getSeveritySeverity - errors', () => {
-      it('should have a getSeveritySeverity function', (done) => {
+    describe('#getAdvisoryBySeverity - errors', () => {
+      it('should have a getAdvisoryBySeverity function', (done) => {
         try {
-          assert.equal(true, typeof a.getSeveritySeverity === 'function');
+          assert.equal(true, typeof a.getAdvisoryBySeverity === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -747,10 +747,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing severity', (done) => {
         try {
-          a.getSeveritySeverity(null, (data, error) => {
+          a.getAdvisoryBySeverity(null, (data, error) => {
             try {
               const displayE = 'severity is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getSeveritySeverity', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryBySeverity', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -764,10 +764,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getSeveritySeverityLastpublished - errors', () => {
-      it('should have a getSeveritySeverityLastpublished function', (done) => {
+    describe('#getAdvisoryBySeverityLastpublished - errors', () => {
+      it('should have a getAdvisoryBySeverityLastpublished function', (done) => {
         try {
-          assert.equal(true, typeof a.getSeveritySeverityLastpublished === 'function');
+          assert.equal(true, typeof a.getAdvisoryBySeverityLastpublished === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -776,10 +776,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing severity', (done) => {
         try {
-          a.getSeveritySeverityLastpublished(null, null, null, (data, error) => {
+          a.getAdvisoryBySeverityLastpublished(null, null, null, (data, error) => {
             try {
               const displayE = 'severity is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getSeveritySeverityLastpublished', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryBySeverityLastpublished', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -793,10 +793,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing startDate', (done) => {
         try {
-          a.getSeveritySeverityLastpublished('fakeparam', null, null, (data, error) => {
+          a.getAdvisoryBySeverityLastpublished('fakeparam', null, null, (data, error) => {
             try {
               const displayE = 'startDate is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getSeveritySeverityLastpublished', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryBySeverityLastpublished', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -810,10 +810,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing endDate', (done) => {
         try {
-          a.getSeveritySeverityLastpublished('fakeparam', 'fakeparam', null, (data, error) => {
+          a.getAdvisoryBySeverityLastpublished('fakeparam', 'fakeparam', null, (data, error) => {
             try {
               const displayE = 'endDate is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getSeveritySeverityLastpublished', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryBySeverityLastpublished', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -827,10 +827,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getSeveritySeverityFirstpublished - errors', () => {
-      it('should have a getSeveritySeverityFirstpublished function', (done) => {
+    describe('#getAdvisoryBySeverityFirstpublished - errors', () => {
+      it('should have a getAdvisoryBySeverityFirstpublished function', (done) => {
         try {
-          assert.equal(true, typeof a.getSeveritySeverityFirstpublished === 'function');
+          assert.equal(true, typeof a.getAdvisoryBySeverityFirstpublished === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -839,10 +839,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing severity', (done) => {
         try {
-          a.getSeveritySeverityFirstpublished(null, null, null, (data, error) => {
+          a.getAdvisoryBySeverityFirstpublished(null, null, null, (data, error) => {
             try {
               const displayE = 'severity is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getSeveritySeverityFirstpublished', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryBySeverityFirstpublished', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -856,10 +856,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing startDate', (done) => {
         try {
-          a.getSeveritySeverityFirstpublished('fakeparam', null, null, (data, error) => {
+          a.getAdvisoryBySeverityFirstpublished('fakeparam', null, null, (data, error) => {
             try {
               const displayE = 'startDate is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getSeveritySeverityFirstpublished', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryBySeverityFirstpublished', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -873,10 +873,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing endDate', (done) => {
         try {
-          a.getSeveritySeverityFirstpublished('fakeparam', 'fakeparam', null, (data, error) => {
+          a.getAdvisoryBySeverityFirstpublished('fakeparam', 'fakeparam', null, (data, error) => {
             try {
               const displayE = 'endDate is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getSeveritySeverityFirstpublished', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryBySeverityFirstpublished', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -890,10 +890,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getYearYear - errors', () => {
-      it('should have a getYearYear function', (done) => {
+    describe('#getAdvisoryByYear - errors', () => {
+      it('should have a getAdvisoryByYear function', (done) => {
         try {
-          assert.equal(true, typeof a.getYearYear === 'function');
+          assert.equal(true, typeof a.getAdvisoryByYear === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -902,10 +902,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing year', (done) => {
         try {
-          a.getYearYear(null, (data, error) => {
+          a.getAdvisoryByYear(null, (data, error) => {
             try {
               const displayE = 'year is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getYearYear', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryByYear', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -919,10 +919,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getLatestNumber - errors', () => {
-      it('should have a getLatestNumber function', (done) => {
+    describe('#getLatestAdvisoryByNumber - errors', () => {
+      it('should have a getLatestAdvisoryByNumber function', (done) => {
         try {
-          assert.equal(true, typeof a.getLatestNumber === 'function');
+          assert.equal(true, typeof a.getLatestAdvisoryByNumber === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -931,10 +931,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing number', (done) => {
         try {
-          a.getLatestNumber(null, (data, error) => {
+          a.getLatestAdvisoryByNumber(null, (data, error) => {
             try {
               const displayE = 'number is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getLatestNumber', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getLatestAdvisoryByNumber', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -948,10 +948,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getProduct - errors', () => {
-      it('should have a getProduct function', (done) => {
+    describe('#getAdvisoryByProductName - errors', () => {
+      it('should have a getAdvisoryByProductName function', (done) => {
         try {
-          assert.equal(true, typeof a.getProduct === 'function');
+          assert.equal(true, typeof a.getAdvisoryByProductName === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -960,10 +960,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing product', (done) => {
         try {
-          a.getProduct(null, (data, error) => {
+          a.getAdvisoryByProductName(null, (data, error) => {
             try {
               const displayE = 'product is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getProduct', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryByProductName', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -977,10 +977,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getIos - errors', () => {
-      it('should have a getIos function', (done) => {
+    describe('#getAdvisoryByIOSVersion - errors', () => {
+      it('should have a getAdvisoryByIOSVersion function', (done) => {
         try {
-          assert.equal(true, typeof a.getIos === 'function');
+          assert.equal(true, typeof a.getAdvisoryByIOSVersion === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -989,10 +989,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing version', (done) => {
         try {
-          a.getIos(null, (data, error) => {
+          a.getAdvisoryByIOSVersion(null, (data, error) => {
             try {
               const displayE = 'version is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getIos', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryByIOSVersion', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -1006,10 +1006,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getIosxe - errors', () => {
-      it('should have a getIosxe function', (done) => {
+    describe('#getAdvisoryByIOSXEVersion - errors', () => {
+      it('should have a getAdvisoryByIOSXEVersion function', (done) => {
         try {
-          assert.equal(true, typeof a.getIosxe === 'function');
+          assert.equal(true, typeof a.getAdvisoryByIOSXEVersion === 'function');
           done();
         } catch (error) {
           log.error(`Test Failure: ${error}`);
@@ -1018,10 +1018,10 @@ describe('[unit] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
       it('should error if - missing version', (done) => {
         try {
-          a.getIosxe(null, (data, error) => {
+          a.getAdvisoryByIOSXEVersion(null, (data, error) => {
             try {
               const displayE = 'version is required';
-              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getIosxe', displayE);
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryByIOSXEVersion', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);

@@ -1,0 +1,397 @@
+{
+  "advisories": [
+    {
+      "advisoryId": "cisco-sa-20190828-iosxe-rest-auth-bypass",
+      "advisoryTitle": "Cisco REST API Container for IOS XE Software Authentication Bypass Vulnerability",
+      "bugIDs": [
+        "CSCvn93524",
+        "CSCvo47376"
+      ],
+      "ipsSignatures": [
+        {
+          "legacyIpsId": "cisco-sa-20190828-iosxe-rest-auth-bypass",
+          "releaseVersion": "S1033",
+          "softwareVersion": "6.0",
+          "legacyIpsUrl": "http://tools.cisco.com/security/center/viewIpsSignature.x?signatureId=8347&signatureSubId=0&softwareVersion=6.0&releaseVersion=S1033"
+        }
+      ],
+      "cves": [
+        "CVE-2019-12643"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20190828-iosxe-rest-auth-bypass/cvrf/cisco-sa-20190828-iosxe-rest-auth-bypass_cvrf.xml",
+      "cvssBaseScore": "10.0",
+      "cwe": [
+        "CWE-287"
+      ],
+      "firstPublished": "2019-08-28T16:00:00-0700",
+      "lastUpdated": "2019-10-18T16:08:02-0700",
+      "productNames": [
+        "Cisco IOS XE Software 3.7.8S",
+        "Cisco IOS XE Software 3.10.0S",
+        "Cisco IOS XE Software 3.10.1S",
+        "Cisco IOS XE Software 3.10.2S",
+        "Cisco IOS XE Software 3.10.3S",
+        "Cisco IOS XE Software 3.10.4S",
+        "Cisco IOS XE Software 3.10.5S",
+        "Cisco IOS XE Software 3.10.6S",
+        "Cisco IOS XE Software 3.10.2aS",
+        "Cisco IOS XE Software 3.10.2tS",
+        "Cisco IOS XE Software 3.10.7S",
+        "Cisco IOS XE Software 3.10.8S",
+        "Cisco IOS XE Software 3.10.8aS",
+        "Cisco IOS XE Software 3.10.9S",
+        "Cisco IOS XE Software 3.10.10S",
+        "Cisco IOS XE Software 3.11.1S",
+        "Cisco IOS XE Software 3.11.2S",
+        "Cisco IOS XE Software 3.11.0S",
+        "Cisco IOS XE Software 3.11.3S",
+        "Cisco IOS XE Software 3.11.4S",
+        "Cisco IOS XE Software 3.12.0S",
+        "Cisco IOS XE Software 3.12.1S",
+        "Cisco IOS XE Software 3.12.2S",
+        "Cisco IOS XE Software 3.12.3S",
+        "Cisco IOS XE Software 3.12.0aS",
+        "Cisco IOS XE Software 3.12.4S",
+        "Cisco IOS XE Software 3.13.0S",
+        "Cisco IOS XE Software 3.13.1S",
+        "Cisco IOS XE Software 3.13.2S",
+        "Cisco IOS XE Software 3.13.3S",
+        "Cisco IOS XE Software 3.13.4S",
+        "Cisco IOS XE Software 3.13.5S",
+        "Cisco IOS XE Software 3.13.2aS",
+        "Cisco IOS XE Software 3.13.0aS",
+        "Cisco IOS XE Software 3.13.5aS",
+        "Cisco IOS XE Software 3.13.6S",
+        "Cisco IOS XE Software 3.13.7S",
+        "Cisco IOS XE Software 3.13.6aS",
+        "Cisco IOS XE Software 3.13.6bS",
+        "Cisco IOS XE Software 3.13.7aS",
+        "Cisco IOS XE Software 3.13.8S",
+        "Cisco IOS XE Software 3.13.9S",
+        "Cisco IOS XE Software 3.13.10S",
+        "Cisco IOS XE Software 3.14.0S",
+        "Cisco IOS XE Software 3.14.1S",
+        "Cisco IOS XE Software 3.14.2S",
+        "Cisco IOS XE Software 3.14.3S",
+        "Cisco IOS XE Software 3.14.4S",
+        "Cisco IOS XE Software 3.15.0S",
+        "Cisco IOS XE Software 3.15.1S",
+        "Cisco IOS XE Software 3.15.2S",
+        "Cisco IOS XE Software 3.15.1cS",
+        "Cisco IOS XE Software 3.15.3S",
+        "Cisco IOS XE Software 3.15.4S",
+        "Cisco IOS XE Software 3.16.0S",
+        "Cisco IOS XE Software 3.16.1S",
+        "Cisco IOS XE Software 3.16.0aS",
+        "Cisco IOS XE Software 3.16.1aS",
+        "Cisco IOS XE Software 3.16.2S",
+        "Cisco IOS XE Software 3.16.2aS",
+        "Cisco IOS XE Software 3.16.0bS",
+        "Cisco IOS XE Software 3.16.0cS",
+        "Cisco IOS XE Software 3.16.3S",
+        "Cisco IOS XE Software 3.16.2bS",
+        "Cisco IOS XE Software 3.16.3aS",
+        "Cisco IOS XE Software 3.16.4S",
+        "Cisco IOS XE Software 3.16.4aS",
+        "Cisco IOS XE Software 3.16.4bS",
+        "Cisco IOS XE Software 3.16.4gS",
+        "Cisco IOS XE Software 3.16.5S",
+        "Cisco IOS XE Software 3.16.4cS",
+        "Cisco IOS XE Software 3.16.4dS",
+        "Cisco IOS XE Software 3.16.4eS",
+        "Cisco IOS XE Software 3.16.6S",
+        "Cisco IOS XE Software 3.16.5aS",
+        "Cisco IOS XE Software 3.16.5bS",
+        "Cisco IOS XE Software 3.16.7S",
+        "Cisco IOS XE Software 3.16.6bS",
+        "Cisco IOS XE Software 3.16.7aS",
+        "Cisco IOS XE Software 3.16.7bS",
+        "Cisco IOS XE Software 3.16.8S",
+        "Cisco IOS XE Software 3.16.9S",
+        "Cisco IOS XE Software 3.17.0S",
+        "Cisco IOS XE Software 3.17.1S",
+        "Cisco IOS XE Software 3.17.2S ",
+        "Cisco IOS XE Software 3.17.1aS",
+        "Cisco IOS XE Software 3.17.3S",
+        "Cisco IOS XE Software 3.17.4S",
+        "Cisco IOS XE Software 16.1.1",
+        "Cisco IOS XE Software 16.1.2",
+        "Cisco IOS XE Software 16.1.3",
+        "Cisco IOS XE Software 16.2.1",
+        "Cisco IOS XE Software 16.2.2",
+        "Cisco IOS XE Software 16.3.1",
+        "Cisco IOS XE Software 16.3.2",
+        "Cisco IOS XE Software 16.3.3",
+        "Cisco IOS XE Software 16.3.1a",
+        "Cisco IOS XE Software 16.3.4",
+        "Cisco IOS XE Software 16.3.5",
+        "Cisco IOS XE Software 16.3.5b",
+        "Cisco IOS XE Software 16.3.6",
+        "Cisco IOS XE Software 16.3.7",
+        "Cisco IOS XE Software 16.3.8",
+        "Cisco IOS XE Software 16.4.1",
+        "Cisco IOS XE Software 16.4.2",
+        "Cisco IOS XE Software 16.4.3",
+        "Cisco IOS XE Software 16.5.1",
+        "Cisco IOS XE Software 16.5.1a",
+        "Cisco IOS XE Software 16.5.1b",
+        "Cisco IOS XE Software 16.5.2",
+        "Cisco IOS XE Software 16.5.3",
+        "Cisco IOS XE Software 3.18.0aS",
+        "Cisco IOS XE Software 3.18.0S",
+        "Cisco IOS XE Software 3.18.1S",
+        "Cisco IOS XE Software 3.18.2S",
+        "Cisco IOS XE Software 3.18.3S",
+        "Cisco IOS XE Software 3.18.4S",
+        "Cisco IOS XE Software 3.18.0SP",
+        "Cisco IOS XE Software 3.18.1SP",
+        "Cisco IOS XE Software 3.18.1aSP",
+        "Cisco IOS XE Software 3.18.1gSP",
+        "Cisco IOS XE Software 3.18.1bSP",
+        "Cisco IOS XE Software 3.18.1cSP",
+        "Cisco IOS XE Software 3.18.2SP",
+        "Cisco IOS XE Software 3.18.1hSP",
+        "Cisco IOS XE Software 3.18.2aSP",
+        "Cisco IOS XE Software 3.18.1iSP",
+        "Cisco IOS XE Software 3.18.3SP",
+        "Cisco IOS XE Software 3.18.4SP",
+        "Cisco IOS XE Software 3.18.3aSP",
+        "Cisco IOS XE Software 3.18.3bSP",
+        "Cisco IOS XE Software 3.18.5SP",
+        "Cisco IOS XE Software 3.18.6SP",
+        "Cisco IOS XE Software 16.6.1",
+        "Cisco IOS XE Software 16.6.2",
+        "Cisco IOS XE Software 16.6.3",
+        "Cisco IOS XE Software 16.6.4",
+        "Cisco IOS XE Software 16.6.5",
+        "Cisco IOS XE Software 16.6.4s",
+        "Cisco IOS XE Software 16.6.4a",
+        "Cisco IOS XE Software 16.6.5a",
+        "Cisco IOS XE Software 16.6.6",
+        "Cisco IOS XE Software 16.6.5b",
+        "Cisco IOS XE Software 16.7.1",
+        "Cisco IOS XE Software 16.7.1a",
+        "Cisco IOS XE Software 16.7.1b",
+        "Cisco IOS XE Software 16.7.2",
+        "Cisco IOS XE Software 16.7.3",
+        "Cisco IOS XE Software 16.7.4",
+        "Cisco IOS XE Software 16.8.1",
+        "Cisco IOS XE Software 16.8.1a",
+        "Cisco IOS XE Software 16.8.1b",
+        "Cisco IOS XE Software 16.8.1s",
+        "Cisco IOS XE Software 16.8.1c",
+        "Cisco IOS XE Software 16.8.1d",
+        "Cisco IOS XE Software 16.8.2",
+        "Cisco IOS XE Software 16.8.1e",
+        "Cisco IOS XE Software 16.8.3",
+        "Cisco IOS XE Software 16.9.1",
+        "Cisco IOS XE Software 16.9.2",
+        "Cisco IOS XE Software 16.9.1a",
+        "Cisco IOS XE Software 16.9.1b",
+        "Cisco IOS XE Software 16.9.1s",
+        "Cisco IOS XE Software 16.9.1c",
+        "Cisco IOS XE Software 16.9.1d",
+        "Cisco IOS XE Software 16.9.3",
+        "Cisco IOS XE Software 16.9.2a",
+        "Cisco IOS XE Software 16.9.2s",
+        "Cisco IOS XE Software 16.9.3h",
+        "Cisco IOS XE Software 16.9.3s",
+        "Cisco IOS XE Software 16.9.3a",
+        "Cisco IOS XE Software 16.10.1",
+        "Cisco IOS XE Software 16.10.1a",
+        "Cisco IOS XE Software 16.10.1b",
+        "Cisco IOS XE Software 16.10.1s",
+        "Cisco IOS XE Software 16.10.1c",
+        "Cisco IOS XE Software 16.10.1e",
+        "Cisco IOS XE Software 16.10.1d",
+        "Cisco IOS XE Software 16.10.2",
+        "Cisco IOS XE Software 16.10.1f",
+        "Cisco IOS XE Software 16.10.1g",
+        "Cisco IOS XE Software 16.11.1",
+        "Cisco IOS XE Software 16.11.1a",
+        "Cisco IOS XE Software 16.11.1b",
+        "Cisco IOS XE Software 16.11.2",
+        "Cisco IOS XE Software 16.11.1s",
+        "Cisco IOS XE Software 16.11.1c",
+        "Cisco IOS XE Software 17.3.1",
+        "Cisco IOS XE Software 17.4.1",
+        "Cisco IOS XE Software 17.5.1",
+        "Cisco IOS XE Software 17.6.1"
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190828-iosxe-rest-auth-bypass",
+      "sir": "Critical",
+      "summary": "<p>A vulnerability in the Cisco REST API virtual service container for Cisco IOS XE Software could allow an unauthenticated, remote attacker to bypass authentication on the managed Cisco IOS XE device.</p>\n<p>The vulnerability is due to an improper check performed by the area of code that manages the REST API authentication service. An attacker could exploit this vulnerability by submitting malicious HTTP requests to the targeted device. A successful exploit could allow the attacker to obtain the <em>token-id</em> of an authenticated user. This <em>token-id</em> could be used to bypass authentication and execute privileged actions through the interface of the REST API virtual service container on the affected Cisco IOS XE device. </p>\n<p>The REST API interface is not enabled by default and must be installed and activated separately on IOS XE devices. See the <a href=\"#details\">Details</a> section for more information.</p>\n<p>Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.</p>\n<p>This advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190828-iosxe-rest-auth-bypass\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190828-iosxe-rest-auth-bypass</a></p>"
+    },
+    {
+      "advisoryId": "cisco-sa-20191016-airo-unauth-access",
+      "advisoryTitle": "Cisco Aironet Access Points Unauthorized Access Vulnerability",
+      "bugIDs": [
+        "CSCvm54888"
+      ],
+      "ipsSignatures": [
+        "NA"
+      ],
+      "cves": [
+        "CVE-2019-15260"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20191016-airo-unauth-access/cvrf/cisco-sa-20191016-airo-unauth-access_cvrf.xml",
+      "cvssBaseScore": "9.8",
+      "cwe": [
+        "CWE-284"
+      ],
+      "firstPublished": "2019-10-16T16:00:00-0700",
+      "lastUpdated": "2019-10-16T16:00:00-0700",
+      "productNames": [
+        "Cisco Aironet Access Point Software "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191016-airo-unauth-access",
+      "sir": "Critical",
+      "summary": "<p>A vulnerability in Cisco&nbsp;Aironet Access Points (APs) Software could allow an unauthenticated, remote attacker to gain unauthorized access to a targeted device with elevated privileges.</p>\n<p>The vulnerability is due to insufficient access control for certain URLs on an affected device. An attacker could exploit this vulnerability by requesting specific URLs from an affected AP. An exploit could allow the attacker to gain access to the device with elevated privileges. While the attacker would not be granted access to all possible configuration options, it could allow the attacker to view sensitive information and replace some options with values of their choosing, including wireless network configuration. It would also allow the attacker to disable the AP, creating a denial of service (DoS) condition for clients associated with the AP.</p>\n<p>Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.</p>\n<p>This advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191016-airo-unauth-access\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20191016-airo-unauth-access</a></p>"
+    },
+    {
+      "advisoryId": "cisco-sa-20180606-asaftd",
+      "advisoryTitle": "Cisco Adaptive Security Appliance Web Services Denial of Service Vulnerability",
+      "bugIDs": [
+        "CSCvi16029"
+      ],
+      "ipsSignatures": [
+        "NA"
+      ],
+      "cves": [
+        "CVE-2018-0296"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20180606-asaftd/cvrf/cisco-sa-20180606-asaftd_cvrf.xml",
+      "cvssBaseScore": "8.6",
+      "cwe": [
+        "CWE-20"
+      ],
+      "firstPublished": "2018-06-06T16:00:00-0700",
+      "lastUpdated": "2019-09-24T17:49:53-0700",
+      "productNames": [
+        "Cisco Adaptive Security Appliance (ASA) Software ",
+        "Cisco Firepower Threat Defense Software "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-asaftd",
+      "sir": "Critical",
+      "summary": "<p>A vulnerability in the web interface of the Cisco Adaptive Security Appliance (ASA) could allow an unauthenticated, remote attacker to cause an affected device to reload unexpectedly, resulting in a denial of service (DoS) condition. It is also possible on certain software releases that the ASA will not reload, but an attacker could view sensitive system information without authentication by using directory traversal techniques.<br />\n<br />\nThe vulnerability is due to lack of proper input validation of the HTTP URL. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. An exploit could allow the attacker to cause a DoS condition or unauthenticated disclosure of information. This vulnerability applies to IPv4 and IPv6 HTTP traffic.<br />\n<br />\nCisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.</p>\n<p><strong>Note: </strong>Cisco continues to strongly recommend that customers upgrade to a fixed Cisco ASA Software release to remediate this vulnerability as there are continued attempts to exploit in the wild.<br />\n<br />\nThis advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-asaftd\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-asaftd</a></p>"
+    },
+    {
+      "advisoryId": "cisco-sa-20190626-dcnm-codex",
+      "advisoryTitle": "Cisco Data Center Network Manager Arbitrary File Upload and Remote Code Execution Vulnerability",
+      "bugIDs": [
+        "CSCvo64647"
+      ],
+      "ipsSignatures": [
+        {
+          "legacyIpsId": "cisco-sa-20190626-dcnm-codex",
+          "releaseVersion": "S1031",
+          "softwareVersion": "6.0",
+          "legacyIpsUrl": "http://tools.cisco.com/security/center/viewIpsSignature.x?signatureId=8326&signatureSubId=0&softwareVersion=6.0&releaseVersion=S1031"
+        }
+      ],
+      "cves": [
+        "CVE-2019-1620"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20190626-dcnm-codex/cvrf/cisco-sa-20190626-dcnm-codex_cvrf.xml",
+      "cvssBaseScore": "9.8",
+      "cwe": [
+        "CWE-264"
+      ],
+      "firstPublished": "2019-06-26T16:00:00-0700",
+      "lastUpdated": "2019-09-19T16:08:38-0700",
+      "productNames": [
+        "Cisco Data Center Network Manager "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190626-dcnm-codex",
+      "sir": "Critical",
+      "summary": "<p>A vulnerability in the web-based management interface of Cisco&nbsp;Data Center Network Manager (DCNM) could allow an unauthenticated, remote attacker to upload arbitrary files on an affected device.</p>\n<p>The vulnerability is due to incorrect permission settings in affected DCNM software. An attacker could exploit this vulnerability by uploading specially crafted data to the affected device. A successful exploit could allow the attacker to write arbitrary files on the filesystem and execute code with root privileges on the affected device.</p>\n<p>Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.<br />\n<br />\nThis advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190626-dcnm-codex\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190626-dcnm-codex</a></p>"
+    },
+    {
+      "advisoryId": "cisco-sa-20190626-dcnm-bypass",
+      "advisoryTitle": "Cisco Data Center Network Manager Authentication Bypass Vulnerability",
+      "bugIDs": [
+        "CSCvo64641"
+      ],
+      "ipsSignatures": [
+        {
+          "legacyIpsId": "cisco-sa-20190626-dcnm-bypass",
+          "releaseVersion": "S1031",
+          "softwareVersion": "6.0",
+          "legacyIpsUrl": "http://tools.cisco.com/security/center/viewIpsSignature.x?signatureId=8325&signatureSubId=0&softwareVersion=6.0&releaseVersion=S1031"
+        }
+      ],
+      "cves": [
+        "CVE-2019-1619"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20190626-dcnm-bypass/cvrf/cisco-sa-20190626-dcnm-bypass_cvrf.xml",
+      "cvssBaseScore": "9.8",
+      "cwe": [
+        "CWE-284"
+      ],
+      "firstPublished": "2019-06-26T16:00:00-0700",
+      "lastUpdated": "2019-09-19T16:08:37-0700",
+      "productNames": [
+        "Cisco Data Center Network Manager "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190626-dcnm-bypass",
+      "sir": "Critical",
+      "summary": "<p>A vulnerability in the web-based management interface of Cisco&nbsp;Data Center Network Manager (DCNM) could allow an unauthenticated, remote attacker to bypass authentication and execute arbitrary actions with administrative privileges on an affected device.</p>\n<p>The vulnerability is due to improper session management on affected DCNM software. An attacker could exploit this vulnerability by sending a crafted HTTP request to the affected device. A successful exploit could allow the attacker to gain administrative access on the affected device.</p>\n<p>Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.\n<br />\n<br />\nThis advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190626-dcnm-bypass\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190626-dcnm-bypass</a></p>"
+    },
+    {
+      "advisoryId": "cisco-sa-20190821-imcs-usercred",
+      "advisoryTitle": "Cisco Integrated Management Controller Supervisor, Cisco UCS Director, and Cisco UCS Director Express for Big Data SCP User Default Credentials Vulnerability",
+      "bugIDs": [
+        "CSCvp19251"
+      ],
+      "ipsSignatures": [
+        "NA"
+      ],
+      "cves": [
+        "CVE-2019-1935"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20190821-imcs-usercred/cvrf/cisco-sa-20190821-imcs-usercred_cvrf.xml",
+      "cvssBaseScore": "9.8",
+      "cwe": [
+        "CWE-798"
+      ],
+      "firstPublished": "2019-08-21T16:00:00-0700",
+      "lastUpdated": "2019-08-30T12:38:58-0700",
+      "productNames": [
+        "Cisco UCS Director ",
+        "Cisco Integrated Management Controller (IMC) Supervisor ",
+        "Cisco Unified Computing System Director Express for Big Data "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190821-imcs-usercred",
+      "sir": "Critical",
+      "summary": "<p>A vulnerability in Cisco&nbsp;Integrated Management Controller (IMC) Supervisor, Cisco&nbsp;UCS Director, and Cisco&nbsp;UCS Director Express for Big Data could allow an unauthenticated, remote attacker to log in to the CLI of an affected system by using the SCP User account (<em>scpuser</em>), which has default user credentials.</p>\n<p>The vulnerability is due to the presence of a documented default account with an undocumented default password and incorrect permission settings for that account. Changing the default password for this account is not enforced during the installation of the product. An attacker could exploit this vulnerability by using the account to log in to an affected system. A successful exploit could allow the attacker to execute arbitrary commands with the privileges of the <em>scpuser</em> account. This includes full read and write access to the system's database.</p>\n<p>Cisco has released software updates that address this vulnerability. There are workarounds that address this vulnerability.</p>\n<p>This advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190821-imcs-usercred\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190821-imcs-usercred</a></p>"
+    },
+    {
+      "advisoryId": "cisco-sa-20190821-imcs-ucs-authby",
+      "advisoryTitle": "Cisco Integrated Management Controller Supervisor, Cisco UCS Director, and Cisco UCS Director Express for Big Data Authentication Bypass Vulnerability",
+      "bugIDs": [
+        "CSCvp19229"
+      ],
+      "ipsSignatures": [
+        "NA"
+      ],
+      "cves": [
+        "CVE-2019-1937"
+      ],
+      "cvrfUrl": "https://tools.cisco.com/security/center/contentxml/CiscoSecurityAdvisory/cisco-sa-20190821-imcs-ucs-authby/cvrf/cisco-sa-20190821-imcs-ucs-authby_cvrf.xml",
+      "cvssBaseScore": "9.8",
+      "cwe": [
+        "CWE-287"
+      ],
+      "firstPublished": "2019-08-21T16:00:00-0700",
+      "lastUpdated": "2019-08-30T12:30:29-0700",
+      "productNames": [
+        "Cisco UCS Director ",
+        "Cisco Integrated Management Controller (IMC) Supervisor ",
+        "Cisco Unified Computing System Director Express for Big Data "
+      ],
+      "publicationUrl": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190821-imcs-ucs-authby",
+      "sir": "Critical",
+      "summary": "<p>A vulnerability in the web-based management interface of Cisco&nbsp;Integrated Management Controller (IMC) Supervisor, Cisco&nbsp;UCS Director, and Cisco&nbsp;UCS Director Express for Big Data could allow an unauthenticated, remote attacker to acquire a valid session token with administrator privileges, bypassing user authentication.</p>\n<p>The vulnerability is due to insufficient request header validation during the authentication process. An attacker could exploit this vulnerability by sending a series of malicious requests to an affected device. An exploit could allow the attacker to use the acquired session token to gain full administrator access to the affected device.</p>\n<p>Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.</p>\n<p>This advisory is available at the following link:<br />\n<a href=\"https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190821-imcs-ucs-authby\">https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190821-imcs-ucs-authby</a></p>"
+    }
+  ]
+}

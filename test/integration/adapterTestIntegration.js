@@ -21,15 +21,15 @@ let logLevel = 'none';
 const stub = true;
 const isRapidFail = false;
 const isSaveMockData = false;
-const attemptTimeout = 5000;
+const attemptTimeout = 100000;
 
 // these variables can be changed to run in integrated mode so easier to set them here
 // always check these in with bogus data!!!
-const host = 'replace.hostorip.here';
+const host = 'api.cisco.com';
 const username = 'username';
 const password = 'password';
-const protocol = 'http';
-const port = 80;
+const protocol = 'https';
+const port = 443;
 const sslenable = false;
 const sslinvalid = false;
 
@@ -46,13 +46,13 @@ global.pronghornProps = {
       properties: {
         host,
         port,
-        base_path: '/',
+        base_path: '',
         version: '',
         cache_location: 'none',
         protocol,
         stub,
         authentication: {
-          auth_method: 'no_authentication',
+          auth_method: 'request_token',
           username,
           password,
           token: '',
@@ -60,7 +60,7 @@ global.pronghornProps = {
           token_cache: 'local',
           invalid_token_error: 401,
           auth_field: 'header.headers.Authorization',
-          auth_field_format: 'Basic {b64}{username}:{password}{/b64}'
+          auth_field_format: 'Bearer {token}'
         },
         healthcheck: {
           type: 'startup',
@@ -185,11 +185,28 @@ function saveMockData(entityName, actionName, descriptor, responseData) {
 
   // must have a response in order to store the response
   if (responseData && responseData.response) {
-    const data = responseData.response;
+    let data = responseData.response;
+
+    // if there was a raw response that one is better as it is untranslated
+    if (responseData.raw) {
+      data = responseData.raw;
+
+      try {
+        const temp = JSON.parse(data);
+        data = temp;
+      } catch (pex) {
+        // do not care if it did not parse as we will just use data
+      }
+    }
 
     try {
-      const base = `./entities/${entityName}/`;
+      const base = path.join(__dirname, `../../entities/${entityName}/`);
+      const mockdatafolder = 'mockdatafiles';
       const filename = `mockdatafiles/${actionName}-${descriptor}.json`;
+
+      if (!fs.existsSync(base + mockdatafolder)) {
+        fs.mkdirSync(base + mockdatafolder);
+      }
 
       // write the data we retrieved
       fs.writeFile(base + filename, JSON.stringify(data, null, 2), 'utf8', (errWritingMock) => {
@@ -226,7 +243,7 @@ function saveMockData(entityName, actionName, descriptor, responseData) {
             const defaultResponseObj = currentMethodAction.responseObjects.find(obj => obj.type === 'default');
 
             // save the default key into the new response object
-            if (!defaultResponseObj) {
+            if (defaultResponseObj) {
               responseObj.key = defaultResponseObj.key;
             }
 
@@ -364,18 +381,18 @@ describe('[integration] Psirt Adapter Test', () => {
     -----------------------------------------------------------------------
     */
 
-    describe('#getAll - errors', () => {
+    describe('#getAllAdvisories - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getAll((data, error) => {
+          a.getAllAdvisories((data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('cisco-sa-20191002-asa-dos', data.response.advisories[0].advisoryId);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('All', 'getAll', 'default', data);
+              saveMockData('All', 'getAllAdvisories', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -389,19 +406,20 @@ describe('[integration] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    const cveCveId = 'fakedata';
-    describe('#getCveCveId - errors', () => {
+    const cveCveId = 'CVE-2019-12673';
+    describe('#getAdvisoryByCveId - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getCveCveId(cveCveId, (data, error) => {
+          a.getAdvisoryByCveId(cveCveId, (data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('CVE-2019-12673', data.response.advisories[0].cves);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('Cve', 'getCveCveId', 'default', data);
+              saveMockData('Cve', 'getAdvisoryByCveId', 'default', data);
+
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -415,19 +433,19 @@ describe('[integration] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    const advisoryAdvisoryId = 'fakedata';
-    describe('#getAdvisoryAdvisoryId - errors', () => {
+    const advisoryAdvisoryId = 'cisco-sa-20191002-asa-dos';
+    describe('#getAdvisoryByAdvisoryId - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getAdvisoryAdvisoryId(advisoryAdvisoryId, (data, error) => {
+          a.getAdvisoryByAdvisoryId(advisoryAdvisoryId, (data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('cisco-sa-20191002-asa-dos', data.response.advisories[0].advisoryId);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('Advisory', 'getAdvisoryAdvisoryId', 'default', data);
+              saveMockData('Advisory', 'getAdvisoryByAdvisoryId', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -441,19 +459,19 @@ describe('[integration] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    const severitySeverity = 'fakedata';
-    describe('#getSeveritySeverity - errors', () => {
+    const severitySeverity = 'critical';
+    describe('#getAdvisoryBySeverity - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getSeveritySeverity(severitySeverity, (data, error) => {
+          a.getAdvisoryBySeverity(severitySeverity, (data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('Critical', data.response.advisories[0].sir);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('Severity', 'getSeveritySeverity', 'default', data);
+              saveMockData('Severity', 'getAdvisoryBySeverity', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -467,20 +485,20 @@ describe('[integration] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    const severityStartDate = 'fakedata';
-    const severityEndDate = 'fakedata';
-    describe('#getSeveritySeverityFirstpublished - errors', () => {
+    const severityStartDate = '2019-08-28';
+    const severityEndDate = '2019-10-18';
+    describe('#getAdvisoryBySeverityFirstpublished - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getSeveritySeverityFirstpublished(severitySeverity, severityStartDate, severityEndDate, (data, error) => {
+          a.getAdvisoryBySeverityFirstpublished(severitySeverity, severityStartDate, severityEndDate, (data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('2019-08-28T16:00:00-0700', data.response.advisories[0].firstPublished);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('Severity', 'getSeveritySeverityFirstpublished', 'default', data);
+              saveMockData('Severity', 'getAdvisoryBySeverityFirstpublished', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -494,18 +512,18 @@ describe('[integration] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    describe('#getSeveritySeverityLastpublished - errors', () => {
+    describe('#getAdvisoryBySeverityLastpublished - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getSeveritySeverityLastpublished(severitySeverity, severityStartDate, severityEndDate, (data, error) => {
+          a.getAdvisoryBySeverityLastpublished(severitySeverity, severityStartDate, severityEndDate, (data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('2019-10-18T16:08:02-0700', data.response.advisories[0].lastUpdated);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('Severity', 'getSeveritySeverityLastpublished', 'default', data);
+              saveMockData('Severity', 'getAdvisoryBySeverityLastpublished', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -519,19 +537,19 @@ describe('[integration] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    const yearYear = 'fakedata';
-    describe('#getYearYear - errors', () => {
+    const yearYear = '2019';
+    describe('#getAdvisoryByYear - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getYearYear(yearYear, (data, error) => {
+          a.getAdvisoryByYear(yearYear, (data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('cisco-sa-20191016-airo-capwap-dos', data.response.advisories[0].advisoryId);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('Year', 'getYearYear', 'default', data);
+              saveMockData('Year', 'getAdvisoryByYear', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -545,19 +563,19 @@ describe('[integration] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    const latestNumber = 555;
-    describe('#getLatestNumber - errors', () => {
+    const latestNumber = 5;
+    describe('#getLatestAdvisoryByNumber - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getLatestNumber(latestNumber, (data, error) => {
+          a.getLatestAdvisoryByNumber(latestNumber, (data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('cisco-sa-20191016-wlc-pathtrav', data.response.advisories[0].advisoryId);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('Latest', 'getLatestNumber', 'default', data);
+              saveMockData('Latest', 'getLatestAdvisoryByNumber', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -571,19 +589,19 @@ describe('[integration] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    const productProduct = 'fakedata';
-    describe('#getProduct - errors', () => {
+    const productProduct = 'Cisco Adaptive Security Appliance (ASA) Software';
+    describe('#getAdvisoryByProductName - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getProduct(productProduct, (data, error) => {
+          a.getAdvisoryByProductName(productProduct, (data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('Cisco Adaptive Security Appliance (ASA) Software ', data.response.advisories[0].productNames[0]);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('Product', 'getProduct', 'default', data);
+              saveMockData('Product', 'getAdvisoryByProductName', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -597,19 +615,19 @@ describe('[integration] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    const iosVersion = 'fakedata';
-    describe('#getIos - errors', () => {
+    const iosVersion = '15.9(3)m1';
+    describe('#getAdvisoryByIOSVersion - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getIos(iosVersion, (data, error) => {
+          a.getAdvisoryByIOSVersion(iosVersion, (data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('15.9(3)M1', data.response.advisories[0].iosRelease[0]);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('Ios', 'getIos', 'default', data);
+              saveMockData('Ios', 'getAdvisoryByIOSVersion', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
@@ -623,19 +641,19 @@ describe('[integration] Psirt Adapter Test', () => {
       }).timeout(attemptTimeout);
     });
 
-    const iosxeVersion = 'fakedata';
-    describe('#getIosxe - errors', () => {
+    const iosxeVersion = '17.6.1';
+    describe('#getAdvisoryByIOSXEVersion - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
-          a.getIosxe(iosxeVersion, (data, error) => {
+          a.getAdvisoryByIOSXEVersion(iosxeVersion, (data, error) => {
             try {
+              runCommonAsserts(data, error);
               if (stub) {
-                const displayE = 'Error 400 received on request';
-                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+                assert.equal('17.6.1', data.response.advisories[0].iosRelease[0]);
               } else {
                 runCommonAsserts(data, error);
               }
-              saveMockData('Iosxe', 'getIosxe', 'default', data);
+              saveMockData('Iosxe', 'getAdvisoryByIOSXEVersion', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);

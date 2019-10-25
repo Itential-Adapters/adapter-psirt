@@ -8,11 +8,11 @@
     "ph_request_type": {
       "type": "string",
       "description": "type of request (internal to adapter)",
-      "default": "getSeveritySeverity",
+      "default": "getAdvisoryBySeverity",
       "enum": [
-        "getSeveritySeverity",
-        "getSeveritySeverityLastpublished",
-        "getSeveritySeverityFirstpublished"
+        "getAdvisoryBySeverity",
+        "getAdvisoryBySeverityLastpublished",
+        "getAdvisoryBySeverityFirstpublished"
       ],
       "external_name": "ph_request_type"
     }

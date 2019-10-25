@@ -1,13 +1,19 @@
 {
   "actions": [
     {
-      "name": "getProduct",
+      "name": "getAdvisoryByProductName",
       "protocol": "REST",
       "method": "GET",
       "entitypath": "{base_path}/{version}/security/advisories/product{query}",
       "schema": "schema.json",
       "headers": {},
-      "responseObjects": []
+      "responseObjects": [
+        {
+          "type": "default",
+          "key": "",
+          "mockFile": "mockdatafiles/getAdvisoryByProductName-default.json"
+        }
+      ]
     }
   ]
 }
