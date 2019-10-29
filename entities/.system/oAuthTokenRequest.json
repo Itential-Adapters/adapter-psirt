@@ -18,27 +18,15 @@
         "default": "client_credentials", 
         "external_name": "grant_type"
       }, 
-      "client_secret": {
-        "type": "string",
-        "description": "secret used during login",
-        "default": "your client_secret",
-        "external_name": "client_secret"
-      }, 
-      "client_id": {
-         "type": "string",
-         "description": "client application id",
-        "default": "your client_id",
-        "external_name": "client_id"
-      }, 
       "username": { 
         "type": "string",
         "description": "username to log in with",
-        "external_name": "username"
+        "external_name": "client_id"
       },
       "password": {
         "type": "string",
         "description": "password to log in with",
-        "external_name": "password"
+        "external_name": "client_secret"
       }
     },
     "definitions": {}
