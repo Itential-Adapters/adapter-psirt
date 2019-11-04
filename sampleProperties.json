@@ -1,39 +1,77 @@
 {
   "id": "Adapter-psirt",
+  "type": "Psirt",
   "properties": {
-    "protocol": "https",
     "host": "api.cisco.com",
     "port": 443,
-    "version": "",
     "base_path": "/",
+    "version": "",
+    "cache_location": "none",
+    "save_metric": true,
     "stub": true,
+    "protocol": "https",
     "authentication": {
-      "auth_method": "no_authentication"
+      "auth_method": "no_authentication",
+      "username": "username",
+      "password": "password",
+      "token": "token",
+      "token_timeout": -1,
+      "token_cache": "local",
+      "invalid_token_error": 401,
+      "auth_field": "header.headers.Authorization",
+      "auth_field_format": "{token}"
     },
     "healthcheck": {
       "type": "startup",
-      "protocol": "REST",
-      "URI_Path": "/security/advisories/all"
-    },
-    "request": {
-      "number_retries": 3,
-      "limit_retry_error": 0,
-      "attempt_timeout": 5000,
-      "healthcheck_on_timeout": true,
-      "archiving": false
+      "protocol": "REST"
     },
     "throttle": {
-      "throttle_enabled": false
+      "throttle_enabled": false,
+      "number_pronghorns": 1,
+      "sync_async": "sync",
+      "max_in_queue": 1000,
+      "concurrent_max": 1,
+      "expire_timeout": 0,
+      "avg_runtime": 200
+    },
+    "request": {
+      "number_redirects": 0,
+      "number_retries": 3,
+      "limit_retry_error": 0,
+      "failover_codes": [],
+      "attempt_timeout": 5000,
+      "global_request": {
+        "payload": {},
+        "uriOptions": {},
+        "addlHeaders": {},
+        "authData": {}
+      },
+      "healthcheck_on_timeout": true,
+      "return_raw": false,
+      "archiving": false
     },
     "proxy": {
-      "enabled": false
+      "enabled": false,
+      "host": "",
+      "port": 1,
+      "protocol": "http"
     },
     "ssl": {
-      "enabled": false
+      "ecdhCurve": "",
+      "enabled": false,
+      "accept_invalid_cert": false,
+      "ca_file": "",
+      "secure_protocol": "",
+      "ciphers": ""
     },
-    "cache_location": "none"
+    "mongo": {
+      "host": "",
+      "port": 0,
+      "database": "",
+      "username": "",
+      "password": ""
+    }
   },
-  "type": "Psirt",
   "groups": [],
   "brokers": [],
   "logLevel": "none",

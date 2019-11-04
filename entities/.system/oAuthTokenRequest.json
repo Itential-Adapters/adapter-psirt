@@ -1,33 +1,53 @@
 {
-    "$id": "oAuthTokenRequest.json",
-    "type": "object",
-    "schema": "http://json-schema.org/draft-07/schema#",
-    "translate": true,
-    "dynamicfields": true,
-    "properties": { 
-      "ph_request_type": {
-        "type": "string",
-        "description": "type of request (internal to adapter)", 
-        "default": "getToken", 
-        "enum": [ "getToken" ], 
-        "external_name": "ph_request_type"
-      },
-      "grant_type": {
-        "type": "string",
-        "description": "type of auth",
-        "default": "client_credentials", 
-        "external_name": "grant_type"
-      }, 
-      "username": { 
-        "type": "string",
-        "description": "username to log in with",
-        "external_name": "client_id"
-      },
-      "password": {
-        "type": "string",
-        "description": "password to log in with",
-        "external_name": "client_secret"
-      }
+  "$id": "oAuthTokenRequest.json",
+  "type": "object",
+  "schema": "http://json-schema.org/draft-07/schema#",
+  "translate": true,
+  "dynamicfields": true,
+  "properties": {
+    "ph_request_type": {
+      "type": "string",
+      "description": "type of request (internal to adapter)",
+      "default": "getToken",
+      "enum": [
+        "getToken"
+      ],
+      "external_name": "ph_request_type"
     },
-    "definitions": {}
-  } 
+    "grant_type": {
+      "type": "string",
+      "description": "type of auth",
+      "default": "client_credentials", 
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
+      "external_name": "grant_type"
+    },
+    "username": {
+      "type": "string",
+      "description": "username to log in with",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
+      "external_name": "client_id"
+    },
+    "password": {
+      "type": "string",
+      "description": "password to log in with",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
+      "external_name": "client_secret"
+    }
+  },
+  "definitions": {}
+}

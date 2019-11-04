@@ -16,6 +16,12 @@
     },
     "cveId": {
       "description": "CVE Identifier (i.e., CVE-YYYY-NNNN)",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "cve_id"
     }
   },

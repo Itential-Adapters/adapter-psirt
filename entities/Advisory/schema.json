@@ -16,6 +16,12 @@
     },
     "advisoryId": {
       "description": "advisory ID",
+      "parse": false,
+      "encode": false,
+      "encrypt": {
+        "type": "AES",
+        "key": ""
+      },
       "external_name": "advisory_id"
     }
   },

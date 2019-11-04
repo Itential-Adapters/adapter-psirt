@@ -45,13 +45,13 @@
         "type": "object",
         "description": "A JSON Object containing status, code and the result"
       },
+      "roles": [
+        "admin"
+      ],
       "route": {
         "verb": "POST",
         "path": "/getAdvisoryByCveId"
       },
-      "roles": [
-        "admin"
-      ],
       "task": true
     },
     {
@@ -97,13 +97,13 @@
         "type": "object",
         "description": "A JSON Object containing status, code and the result"
       },
+      "roles": [
+        "admin"
+      ],
       "route": {
         "verb": "POST",
         "path": "/getAdvisoryBySeverity"
       },
-      "roles": [
-        "admin"
-      ],
       "task": true
     },
     {

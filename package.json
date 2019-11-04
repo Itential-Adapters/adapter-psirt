@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "This adapter integrates with system described as: psirt.",
   "main": "adapter.js",
-  "wizardVersion": "2.34.1",
-  "engineVersion": "1.33.2",
+  "wizardVersion": "2.40.0",
+  "engineVersion": "1.42.3",
   "scripts": {
     "artifactize": "npm i && node utils/packModificationScript.js",
     "preinstall": "node utils/setup.js",
@@ -23,7 +23,8 @@
     "Integration",
     "App-Artifacts",
     "Adapter",
-    "psirt",
+    "Security",
+    "PSIRT",
     "Pre-Release"
   ],
   "license": "Apache-2.0",
@@ -32,12 +33,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:itentialopensource/adapters/adapter-psirt.git"
+    "url": "git@gitlab.com:itentialopensource/adapters/security/adapter-psirt.git"
   },
   "author": "Itential",
-  "homepage": "https://gitlab.com:itentialopensource/adapters/adapter-psirt#readme",
+  "homepage": "https://gitlab.com:itentialopensource/adapters/security/adapter-psirt#readme",
   "dependencies": {
-    "@itentialopensource/adapter-utils": "^4.23.0",
+    "@itentialopensource/adapter-utils": "^4.24.1",
     "ajv": "^6.10.0",
     "fs-extra": "^7.0.0",
     "package-json-validator": "^0.6.3",

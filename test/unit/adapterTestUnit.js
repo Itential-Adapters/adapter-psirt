@@ -2,7 +2,7 @@
 
 // Set globals
 /* global describe it log pronghornProps */
-/* eslint global-require:warn */
+/* eslint global-require: warn */
 /* eslint no-unused-vars: warn */
 
 // include required items for testing & logging
@@ -48,13 +48,14 @@ global.pronghornProps = {
       properties: {
         host,
         port,
-        base_path: '/',
+        base_path: '',
         version: '',
         cache_location: 'none',
-        protocol,
+        save_metric: false,
         stub,
+        protocol,
         authentication: {
-          auth_method: 'no_authentication',
+          auth_method: 'request_token',
           username,
           password,
           token: '',
@@ -62,7 +63,7 @@ global.pronghornProps = {
           token_cache: 'local',
           invalid_token_error: 401,
           auth_field: 'header.headers.Authorization',
-          auth_field_format: 'Basic {b64}{username}:{password}{/b64}'
+          auth_field_format: 'Bearer {token}'
         },
         healthcheck: {
           type: 'startup',
@@ -78,11 +79,19 @@ global.pronghornProps = {
           avg_runtime: 200
         },
         request: {
+          number_redirects: 0,
           number_retries: 3,
           limit_retry_error: 0,
           failover_codes: [],
           attempt_timeout: attemptTimeout,
+          global_request: {
+            payload: {},
+            uriOptions: {},
+            addlHeaders: {},
+            authData: {}
+          },
           healthcheck_on_timeout: true,
+          raw_return: true,
           archiving: false
         },
         proxy: {
@@ -98,6 +107,13 @@ global.pronghornProps = {
           ca_file: '',
           secure_protocol: '',
           ciphers: ''
+        },
+        mongo: {
+          host: '',
+          port: 0,
+          database: '',
+          username: '',
+          password: ''
         }
       }
     }]
@@ -468,6 +484,20 @@ describe('[unit] Psirt Adapter Test', () => {
       it('should have an error.json', (done) => {
         try {
           fs.exists('error.json', (val) => {
+            assert.equal(true, val);
+            done();
+          });
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      });
+    });
+
+    describe('sampleProperties.json', () => {
+      it('should have a sampleProperties.json', (done) => {
+        try {
+          fs.exists('sampleProperties.json', (val) => {
             assert.equal(true, val);
             done();
           });

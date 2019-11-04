@@ -21,7 +21,7 @@ let logLevel = 'none';
 const stub = true;
 const isRapidFail = false;
 const isSaveMockData = false;
-const attemptTimeout = 100000;
+const attemptTimeout = 5000;
 
 // these variables can be changed to run in integrated mode so easier to set them here
 // always check these in with bogus data!!!
@@ -49,8 +49,9 @@ global.pronghornProps = {
         base_path: '',
         version: '',
         cache_location: 'none',
-        protocol,
+        save_metric: false,
         stub,
+        protocol,
         authentication: {
           auth_method: 'request_token',
           username,
@@ -76,11 +77,19 @@ global.pronghornProps = {
           avg_runtime: 200
         },
         request: {
+          number_redirects: 0,
           number_retries: 3,
           limit_retry_error: 0,
           failover_codes: [],
           attempt_timeout: attemptTimeout,
+          global_request: {
+            payload: {},
+            uriOptions: {},
+            addlHeaders: {},
+            authData: {}
+          },
           healthcheck_on_timeout: true,
+          raw_return: true,
           archiving: false
         },
         proxy: {
@@ -96,6 +105,13 @@ global.pronghornProps = {
           ca_file: '',
           secure_protocol: '',
           ciphers: ''
+        },
+        mongo: {
+          host: '',
+          port: 0,
+          database: '',
+          username: '',
+          password: ''
         }
       }
     }]
@@ -407,6 +423,7 @@ describe('[integration] Psirt Adapter Test', () => {
     });
 
     const cveCveId = 'CVE-2019-12673';
+
     describe('#getAdvisoryByCveId - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -434,6 +451,7 @@ describe('[integration] Psirt Adapter Test', () => {
     });
 
     const advisoryAdvisoryId = 'cisco-sa-20191002-asa-dos';
+
     describe('#getAdvisoryByAdvisoryId - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -460,6 +478,7 @@ describe('[integration] Psirt Adapter Test', () => {
     });
 
     const severitySeverity = 'critical';
+
     describe('#getAdvisoryBySeverity - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -487,6 +506,7 @@ describe('[integration] Psirt Adapter Test', () => {
 
     const severityStartDate = '2019-08-28';
     const severityEndDate = '2019-10-18';
+
     describe('#getAdvisoryBySeverityFirstpublished - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -538,6 +558,7 @@ describe('[integration] Psirt Adapter Test', () => {
     });
 
     const yearYear = '2019';
+
     describe('#getAdvisoryByYear - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -564,6 +585,7 @@ describe('[integration] Psirt Adapter Test', () => {
     });
 
     const latestNumber = 5;
+
     describe('#getLatestAdvisoryByNumber - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -590,6 +612,7 @@ describe('[integration] Psirt Adapter Test', () => {
     });
 
     const productProduct = 'Cisco Adaptive Security Appliance (ASA) Software';
+
     describe('#getAdvisoryByProductName - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -616,6 +639,7 @@ describe('[integration] Psirt Adapter Test', () => {
     });
 
     const iosVersion = '15.9(3)m1';
+
     describe('#getAdvisoryByIOSVersion - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {
@@ -642,6 +666,7 @@ describe('[integration] Psirt Adapter Test', () => {
     });
 
     const iosxeVersion = '17.6.1';
+
     describe('#getAdvisoryByIOSXEVersion - errors', () => {
       it('should work if integrated but since no mockdata should error when run standalone', (done) => {
         try {

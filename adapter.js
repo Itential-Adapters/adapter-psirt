@@ -249,7 +249,6 @@ class Psirt extends AdapterBaseCl {
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
     // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const reqObj = null;
 
     try {
@@ -293,15 +292,13 @@ class Psirt extends AdapterBaseCl {
     log.trace(origin);
 
     /* HERE IS WHERE YOU VALIDATE DATA */
-    if (!cveId) {
+    if (cveId === undefined || cveId === null || cveId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['cveId'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const queryParamsAvailable = {};
     const queryParams = {};
     const pathVars = [cveId];
@@ -309,18 +306,18 @@ class Psirt extends AdapterBaseCl {
 
     // loop in template. long callback arg name to avoid identifier conflicts
     Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable]) {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
         queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
       }
     });
 
-
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
     const reqObj = {
       payload: bodyVars,
       uriPathVars: pathVars,
       uriQuery: queryParams
     };
-
 
     try {
       // Make the call -
@@ -363,15 +360,13 @@ class Psirt extends AdapterBaseCl {
     log.trace(origin);
 
     /* HERE IS WHERE YOU VALIDATE DATA */
-    if (!advisoryId) {
+    if (advisoryId === undefined || advisoryId === null || advisoryId === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['advisoryId'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const queryParamsAvailable = {};
     const queryParams = {};
     const pathVars = [advisoryId];
@@ -379,18 +374,18 @@ class Psirt extends AdapterBaseCl {
 
     // loop in template. long callback arg name to avoid identifier conflicts
     Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable]) {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
         queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
       }
     });
 
-
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
     const reqObj = {
       payload: bodyVars,
       uriPathVars: pathVars,
       uriQuery: queryParams
     };
-
 
     try {
       // Make the call -
@@ -433,15 +428,13 @@ class Psirt extends AdapterBaseCl {
     log.trace(origin);
 
     /* HERE IS WHERE YOU VALIDATE DATA */
-    if (!severity) {
+    if (severity === undefined || severity === null || severity === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['severity'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const queryParamsAvailable = {};
     const queryParams = {};
     const pathVars = [severity];
@@ -449,18 +442,18 @@ class Psirt extends AdapterBaseCl {
 
     // loop in template. long callback arg name to avoid identifier conflicts
     Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable]) {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
         queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
       }
     });
 
-
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
     const reqObj = {
       payload: bodyVars,
       uriPathVars: pathVars,
       uriQuery: queryParams
     };
-
 
     try {
       // Make the call -
@@ -505,25 +498,23 @@ class Psirt extends AdapterBaseCl {
     log.trace(origin);
 
     /* HERE IS WHERE YOU VALIDATE DATA */
-    if (!severity) {
+    if (severity === undefined || severity === null || severity === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['severity'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
-    if (!startDate) {
+    if (startDate === undefined || startDate === null || startDate === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['startDate'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
-    if (!endDate) {
+    if (endDate === undefined || endDate === null || endDate === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['endDate'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const queryParamsAvailable = { startDate, endDate };
     const queryParams = {};
     const pathVars = [severity];
@@ -531,18 +522,18 @@ class Psirt extends AdapterBaseCl {
 
     // loop in template. long callback arg name to avoid identifier conflicts
     Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable]) {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
         queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
       }
     });
 
-
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
     const reqObj = {
       payload: bodyVars,
       uriPathVars: pathVars,
       uriQuery: queryParams
     };
-
 
     try {
       // Make the call -
@@ -587,25 +578,23 @@ class Psirt extends AdapterBaseCl {
     log.trace(origin);
 
     /* HERE IS WHERE YOU VALIDATE DATA */
-    if (!severity) {
+    if (severity === undefined || severity === null || severity === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['severity'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
-    if (!startDate) {
+    if (startDate === undefined || startDate === null || startDate === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['startDate'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
-    if (!endDate) {
+    if (endDate === undefined || endDate === null || endDate === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['endDate'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const queryParamsAvailable = { startDate, endDate };
     const queryParams = {};
     const pathVars = [severity];
@@ -613,18 +602,18 @@ class Psirt extends AdapterBaseCl {
 
     // loop in template. long callback arg name to avoid identifier conflicts
     Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable]) {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
         queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
       }
     });
 
-
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
     const reqObj = {
       payload: bodyVars,
       uriPathVars: pathVars,
       uriQuery: queryParams
     };
-
 
     try {
       // Make the call -
@@ -667,15 +656,13 @@ class Psirt extends AdapterBaseCl {
     log.trace(origin);
 
     /* HERE IS WHERE YOU VALIDATE DATA */
-    if (!year) {
+    if (year === undefined || year === null || year === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['year'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const queryParamsAvailable = {};
     const queryParams = {};
     const pathVars = [year];
@@ -683,18 +670,18 @@ class Psirt extends AdapterBaseCl {
 
     // loop in template. long callback arg name to avoid identifier conflicts
     Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable]) {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
         queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
       }
     });
 
-
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
     const reqObj = {
       payload: bodyVars,
       uriPathVars: pathVars,
       uriQuery: queryParams
     };
-
 
     try {
       // Make the call -
@@ -737,15 +724,13 @@ class Psirt extends AdapterBaseCl {
     log.trace(origin);
 
     /* HERE IS WHERE YOU VALIDATE DATA */
-    if (!number) {
+    if (number === undefined || number === null || number === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['number'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const queryParamsAvailable = {};
     const queryParams = {};
     const pathVars = [number];
@@ -753,18 +738,18 @@ class Psirt extends AdapterBaseCl {
 
     // loop in template. long callback arg name to avoid identifier conflicts
     Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable]) {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
         queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
       }
     });
 
-
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
     const reqObj = {
       payload: bodyVars,
       uriPathVars: pathVars,
       uriQuery: queryParams
     };
-
 
     try {
       // Make the call -
@@ -807,15 +792,13 @@ class Psirt extends AdapterBaseCl {
     log.trace(origin);
 
     /* HERE IS WHERE YOU VALIDATE DATA */
-    if (!product) {
+    if (product === undefined || product === null || product === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['product'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const queryParamsAvailable = { product };
     const queryParams = {};
     const pathVars = [];
@@ -823,18 +806,18 @@ class Psirt extends AdapterBaseCl {
 
     // loop in template. long callback arg name to avoid identifier conflicts
     Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable]) {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
         queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
       }
     });
 
-
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
     const reqObj = {
       payload: bodyVars,
       uriPathVars: pathVars,
       uriQuery: queryParams
     };
-
 
     try {
       // Make the call -
@@ -877,15 +860,13 @@ class Psirt extends AdapterBaseCl {
     log.trace(origin);
 
     /* HERE IS WHERE YOU VALIDATE DATA */
-    if (!version) {
+    if (version === undefined || version === null || version === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['version'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const queryParamsAvailable = { version };
     const queryParams = {};
     const pathVars = [];
@@ -893,18 +874,18 @@ class Psirt extends AdapterBaseCl {
 
     // loop in template. long callback arg name to avoid identifier conflicts
     Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable]) {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
         queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
       }
     });
 
-
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
     const reqObj = {
       payload: bodyVars,
       uriPathVars: pathVars,
       uriQuery: queryParams
     };
-
 
     try {
       // Make the call -
@@ -947,15 +928,13 @@ class Psirt extends AdapterBaseCl {
     log.trace(origin);
 
     /* HERE IS WHERE YOU VALIDATE DATA */
-    if (!version) {
+    if (version === undefined || version === null || version === '') {
       const errorObj = this.requestHandlerInst.formatErrorObject(this.id, meth, 'Missing Data', ['version'], null, null, null);
       log.error(`${origin}: ${errorObj.IAPerror.displayString}`);
       return callback(null, errorObj);
     }
 
     /* HERE IS WHERE YOU SET THE DATA TO PASS INTO REQUEST */
-    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
-
     const queryParamsAvailable = { version };
     const queryParams = {};
     const pathVars = [];
@@ -963,18 +942,18 @@ class Psirt extends AdapterBaseCl {
 
     // loop in template. long callback arg name to avoid identifier conflicts
     Object.keys(queryParamsAvailable).forEach((thisKeyInQueryParamsAvailable) => {
-      if (queryParamsAvailable[thisKeyInQueryParamsAvailable]) {
+      if (queryParamsAvailable[thisKeyInQueryParamsAvailable] !== undefined && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== null
+          && queryParamsAvailable[thisKeyInQueryParamsAvailable] !== '') {
         queryParams[thisKeyInQueryParamsAvailable] = queryParamsAvailable[thisKeyInQueryParamsAvailable];
       }
     });
 
-
+    // set up the request object - payload, uriPathVars, uriQuery, uriOptions, addlHeaders
     const reqObj = {
       payload: bodyVars,
       uriPathVars: pathVars,
       uriQuery: queryParams
     };
-
 
     try {
       // Make the call -
