@@ -10,7 +10,7 @@
       "description": "type of request (internal to adapter)",
       "default": "getAdvisoryByYear",
       "enum": [
-        "getYearYear"
+        "getAdvisoryByYear"
       ],
       "external_name": "ph_request_type"
     }
