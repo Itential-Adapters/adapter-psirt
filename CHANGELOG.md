@@ -1,4 +1,12 @@
 
+## 0.2.1 [01-14-2020]
+
+* december migration
+
+See merge request itentialopensource/adapters/security/adapter-psirt!2
+
+---
+
 ## 0.2.0 [11-08-2019]
 
 * update to the latest foundation
