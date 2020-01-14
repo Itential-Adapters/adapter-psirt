@@ -2,7 +2,6 @@
   "id": "@itentialopensource/adapter-psirt",
   "type": "Adapter",
   "export": "Psirt",
-  "displayName": "Psirt",
   "title": "Psirt",
   "src": "adapter.js",
   "roles": [
@@ -17,7 +16,11 @@
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
@@ -37,13 +40,21 @@
           "name": "cveId",
           "type": "string",
           "info": "CVE Identifier (i.e., CVE-YYYY-NNNN)",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "cveId",
+            "type": "string"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
@@ -63,13 +74,21 @@
           "name": "advisoryId",
           "type": "string",
           "info": "advisory ID",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "advisoryId",
+            "type": "string"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
@@ -89,13 +108,21 @@
           "name": "severity",
           "type": "string",
           "info": "Critical, High, Medium, Low",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "severity",
+            "type": "string"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
@@ -115,25 +142,41 @@
           "name": "severity",
           "type": "string",
           "info": "Used to obtain all advisories that have a security impact rating of critical",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "severity",
+            "type": "string"
+          }
         },
         {
           "name": "startDate",
           "type": "string",
           "info": "",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "startDate",
+            "type": "string"
+          }
         },
         {
           "name": "endDate",
           "type": "string",
           "info": "",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "endDate",
+            "type": "string"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
@@ -153,25 +196,41 @@
           "name": "severity",
           "type": "string",
           "info": "Used to obtain all advisories that have a security impact rating of critical",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "severity",
+            "type": "string"
+          }
         },
         {
           "name": "startDate",
           "type": "string",
           "info": "",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "startDate",
+            "type": "string"
+          }
         },
         {
           "name": "endDate",
           "type": "string",
           "info": "",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "endDate",
+            "type": "string"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
@@ -191,13 +250,21 @@
           "name": "year",
           "type": "string",
           "info": "The four digit year.",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "year",
+            "type": "string"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
@@ -217,13 +284,21 @@
           "name": "number",
           "type": "number",
           "info": "An absolute number to obtain the latest security advisories.",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "number",
+            "type": "number"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
@@ -243,13 +318,21 @@
           "name": "product",
           "type": "string",
           "info": "An product name to obtain security advisories that matches given product name.",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "product",
+            "type": "string"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
@@ -269,13 +352,21 @@
           "name": "version",
           "type": "string",
           "info": "IOS version to obtain security advisories",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "version",
+            "type": "string"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
@@ -295,13 +386,21 @@
           "name": "version",
           "type": "string",
           "info": "IOSXE version to obtain security advisories",
-          "required": true
+          "required": true,
+          "schema": {
+            "title": "version",
+            "type": "string"
+          }
         }
       ],
       "output": {
         "name": "result",
         "type": "object",
-        "description": "A JSON Object containing status, code and the result"
+        "description": "A JSON Object containing status, code and the result",
+        "schema": {
+          "title": "result",
+          "type": "object"
+        }
       },
       "roles": [
         "admin"
