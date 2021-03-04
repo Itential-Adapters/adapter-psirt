@@ -62,11 +62,13 @@ global.pronghornProps = {
           token_cache: 'local',
           invalid_token_error: 401,
           auth_field: 'header.headers.Authorization',
-          auth_field_format: 'Bearer {token}'
+          auth_field_format: 'Bearer {token}',
+          auth_logging: false
         },
         healthcheck: {
           type: 'startup',
-          frequency: 60000
+          frequency: 60000,
+          query_object: {}
         },
         throttle: {
           throttle_enabled: false,
@@ -97,13 +99,16 @@ global.pronghornProps = {
           },
           healthcheck_on_timeout: true,
           raw_return: true,
-          archiving: false
+          archiving: false,
+          return_request: false
         },
         proxy: {
           enabled: false,
           host: '',
           port: 1,
-          protocol: 'http'
+          protocol: 'http',
+          username: '',
+          password: ''
         },
         ssl: {
           ecdhCurve: '',
@@ -695,6 +700,81 @@ describe('[integration] Psirt Adapter Test', () => {
                 runCommonAsserts(data, error);
               }
               saveMockData('Iosxe', 'getAdvisoryByIOSXEVersion', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSecurityAdvisoriesBugidByBugId - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSecurityAdvisoriesBugidByBugId('fakedata', (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Security', 'getSecurityAdvisoriesBugidByBugId', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSecurityAdvisoriesAci - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSecurityAdvisoriesAci('fakedata', (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Security', 'getSecurityAdvisoriesAci', 'default', data);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSecurityAdvisoriesNxos - errors', () => {
+      it('should work if integrated but since no mockdata should error when run standalone', (done) => {
+        try {
+          a.getSecurityAdvisoriesNxos('fakedata', (data, error) => {
+            try {
+              if (stub) {
+                const displayE = 'Error 400 received on request';
+                runErrorAsserts(data, error, 'AD.500', 'Test-psirt-connectorRest-handleEndResponse', displayE);
+              } else {
+                runCommonAsserts(data, error);
+              }
+              saveMockData('Security', 'getSecurityAdvisoriesNxos', 'default', data);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);

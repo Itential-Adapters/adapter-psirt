@@ -64,11 +64,13 @@ global.pronghornProps = {
           token_cache: 'local',
           invalid_token_error: 401,
           auth_field: 'header.headers.Authorization',
-          auth_field_format: 'Bearer {token}'
+          auth_field_format: 'Bearer {token}',
+          auth_logging: false
         },
         healthcheck: {
           type: 'startup',
-          frequency: 60000
+          frequency: 60000,
+          query_object: {}
         },
         throttle: {
           throttle_enabled: false,
@@ -99,13 +101,16 @@ global.pronghornProps = {
           },
           healthcheck_on_timeout: true,
           raw_return: true,
-          archiving: false
+          archiving: false,
+          return_request: false
         },
         proxy: {
           enabled: false,
           host: '',
           port: 1,
-          protocol: 'http'
+          protocol: 'http',
+          username: '',
+          password: ''
         },
         ssl: {
           ecdhCurve: '',
@@ -264,7 +269,7 @@ describe('[unit] Psirt Adapter Test', () => {
     describe('#getWorkflowFunctions', () => {
       it('should retrieve workflow functions', (done) => {
         try {
-          wffunctions = a.getWorkflowFunctions();
+          wffunctions = a.getWorkflowFunctions([]);
 
           try {
             assert.notEqual(0, wffunctions.length);
@@ -370,7 +375,7 @@ describe('[unit] Psirt Adapter Test', () => {
                 let wfparams = [];
 
                 if (methLine && methLine.indexOf('(') >= 0 && methLine.indexOf(')') >= 0) {
-                  const temp = methLine.substring(methLine.indexOf('(') + 1, methLine.indexOf(')'));
+                  const temp = methLine.substring(methLine.indexOf('(') + 1, methLine.lastIndexOf(')'));
                   wfparams = temp.split(',');
 
                   for (let t = 0; t < wfparams.length; t += 1) {
@@ -1103,6 +1108,93 @@ describe('[unit] Psirt Adapter Test', () => {
             try {
               const displayE = 'version is required';
               runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getAdvisoryByIOSXEVersion', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSecurityAdvisoriesBugidByBugId - errors', () => {
+      it('should have a getSecurityAdvisoriesBugidByBugId function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSecurityAdvisoriesBugidByBugId === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing bugId', (done) => {
+        try {
+          a.getSecurityAdvisoriesBugidByBugId(null, (data, error) => {
+            try {
+              const displayE = 'bugId is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getSecurityAdvisoriesBugidByBugId', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSecurityAdvisoriesAci - errors', () => {
+      it('should have a getSecurityAdvisoriesAci function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSecurityAdvisoriesAci === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing version', (done) => {
+        try {
+          a.getSecurityAdvisoriesAci(null, (data, error) => {
+            try {
+              const displayE = 'version is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getSecurityAdvisoriesAci', displayE);
+              done();
+            } catch (err) {
+              log.error(`Test Failure: ${err}`);
+              done(err);
+            }
+          });
+        } catch (error) {
+          log.error(`Adapter Exception: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+    });
+
+    describe('#getSecurityAdvisoriesNxos - errors', () => {
+      it('should have a getSecurityAdvisoriesNxos function', (done) => {
+        try {
+          assert.equal(true, typeof a.getSecurityAdvisoriesNxos === 'function');
+          done();
+        } catch (error) {
+          log.error(`Test Failure: ${error}`);
+          done(error);
+        }
+      }).timeout(attemptTimeout);
+      it('should error if - missing version', (done) => {
+        try {
+          a.getSecurityAdvisoriesNxos(null, (data, error) => {
+            try {
+              const displayE = 'version is required';
+              runErrorAsserts(data, error, 'AD.300', 'Test-psirt-adapter-getSecurityAdvisoriesNxos', displayE);
               done();
             } catch (err) {
               log.error(`Test Failure: ${err}`);
