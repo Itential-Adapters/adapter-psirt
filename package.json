@@ -1,6 +1,6 @@
 {
   "name": "@itentialopensource/adapter-psirt",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "This adapter integrates with system described as: psirt.",
   "main": "adapter.js",
   "systemName": "Cisco Product Security Incident Response Team",

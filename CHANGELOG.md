@@ -1,4 +1,12 @@
 
+## 0.3.0 [05-29-2022]
+
+* Migration to the latest Adapter Foundation
+
+See merge request itentialopensource/adapters/security/adapter-psirt!5
+
+---
+
 ## 0.2.3 [03-04-2021]
 
 - Migration to bring up to the latest foundation
