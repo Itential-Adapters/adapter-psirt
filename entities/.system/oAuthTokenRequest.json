@@ -17,7 +17,7 @@
     "grant_type": {
       "type": "string",
       "description": "type of auth",
-      "default": "client_credentials", 
+      "default": "client_credentials",
       "parse": false,
       "encode": false,
       "encrypt": {

@@ -4,7 +4,7 @@
       "name": "getToken",
       "protocol": "REST",
       "method": "POST",
-      "entitypath": "{base_path}/{version}/as/token.oauth2",
+      "entitypath": "{base_path}/{version}/oauth2/default/v1/token",
       "requestSchema": "oAuthTokenRequest.json",
       "responseSchema": "respTokenSchema.json",
       "timeout": 1800000,
@@ -15,7 +15,7 @@
       "headers": {},
       "sso": {
         "protocol": "https",
-        "host": "cloudsso.cisco.com",
+        "host": "id.cisco.com",
         "port": 443
       },
       "responseObjects": [
