@@ -1,4 +1,12 @@
 
+## 0.4.0 [12-20-2023]
+
+* Adapter Engine has been updated and the changes are being migrated to the adapter
+
+See merge request itentialopensource/adapters/security/adapter-psirt!7
+
+---
+
 ## 0.3.0 [05-29-2022]
 
 * Migration to the latest Adapter Foundation
