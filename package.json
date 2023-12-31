@@ -1,6 +1,6 @@
 {
   "name": "@itentialopensource/adapter-psirt",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "This adapter integrates with system described as: psirt.",
   "main": "adapter.js",
   "wizardVersion": "2.44.7",

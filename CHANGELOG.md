@@ -1,4 +1,12 @@
 
+## 0.4.1 [12-31-2023]
+
+* update metadata
+
+See merge request itentialopensource/adapters/security/adapter-psirt!8
+
+---
+
 ## 0.4.0 [12-20-2023]
 
 * Adapter Engine has been updated and the changes are being migrated to the adapter
