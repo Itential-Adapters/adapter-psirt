@@ -316,7 +316,7 @@ describe('[unit] Psirt Adapter Test', () => {
           assert.notEqual(null, packageDotJson.dependencies);
           assert.notEqual('', packageDotJson.dependencies);
           assert.equal('^8.12.0', packageDotJson.dependencies.ajv);
-          assert.equal('^1.6.2', packageDotJson.dependencies.axios);
+          assert.equal('^1.6.3', packageDotJson.dependencies.axios);
           assert.equal('^11.0.0', packageDotJson.dependencies.commander);
           assert.equal('^11.1.1', packageDotJson.dependencies['fs-extra']);
           assert.equal('^10.2.0', packageDotJson.dependencies.mocha);
