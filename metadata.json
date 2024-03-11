@@ -13,9 +13,25 @@
   ],
   "method": "REST",
   "type": "Adapter",
-  "domains": [],
-  "tags": [],
-  "useCases": [],
+  "domains": [
+    "Security (SASE)"
+  ],
+  "tags": [
+    "Security Policy Management",
+    "Configuration & Compliance",
+    "Network Infrastructure Changes",
+    "Software Upgrades & Device Maintenance"
+  ],
+  "useCases": [
+    "Security Group updates",
+    "Security Rule Removal",
+    "Security Rule Creation",
+    "Run network compliance checks and remediation",
+    "Determine configuration drift",
+    "Device Onboarding",
+    "Software Upgrade",
+    "Firewall Configuration backup or restore"
+  ],
   "deprecated": {
     "isDeprecated": false
   },
@@ -43,5 +59,4 @@
     "transformationProjects": [],
     "exampleProjects": []
   }
-
 }
