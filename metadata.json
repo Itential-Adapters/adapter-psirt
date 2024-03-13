@@ -1,7 +1,7 @@
 {
   "name": "adapter-psirt",
   "webName": "Adapter for Integration to Cisco PSIRT",
-  "vendor": "Cisco",
+  "vendor": "Cisco Systems",
   "product": "PSIRT",
   "osVersion": [],
   "apiVersions": [],
