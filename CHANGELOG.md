@@ -1,4 +1,12 @@
 
+## 0.4.5 [03-27-2024]
+
+* Changes made at 2024.03.27_13:52PM
+
+See merge request itentialopensource/adapters/security/adapter-psirt!13
+
+---
+
 ## 0.4.4 [03-13-2024]
 
 * Changes made at 2024.03.13_11:10AM
