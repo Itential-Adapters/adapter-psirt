@@ -1,10 +1,10 @@
 {
-  "version": "0.4.0",
-  "configLines": 3349,
+  "version": "0.4.5",
+  "configLines": 3354,
   "scriptLines": 1783,
   "codeLines": 3192,
-  "testLines": 4064,
+  "testLines": 4063,
   "testCases": 192,
-  "totalCodeLines": 9039,
+  "totalCodeLines": 9038,
   "wfTasks": 39
 }

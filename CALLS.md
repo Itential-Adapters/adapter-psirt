@@ -20,7 +20,7 @@ These are adapter methods that IAP or you might use. There are some other method
   </tr>
   <tr>
     <td style="padding:15px">healthCheck(callback)</td>
-    <td style="padding:15px">This call ensures that the adapter can communicate with Adapter for Psirt. The actual call that is used is defined in the adapter properties and .system entities action.json file.</td>
+    <td style="padding:15px">This call ensures that the adapter can communicate with Adapter for Cisco PSIRT. The actual call that is used is defined in the adapter properties and .system entities action.json file.</td>
     <td style="padding:15px">No</td>
   </tr>
   <tr>
@@ -30,7 +30,7 @@ These are adapter methods that IAP or you might use. There are some other method
   </tr>
   <tr>
     <td style="padding:15px">encryptProperty(property, technique, callback)</td>
-    <td style="padding:15px">This call will take the provided property and technique, and return the property encrypted with the technique. This allows the property to be used in the adapterProps section for the credential password so that the password does not have to be in clear text. The adapter will decrypt the property as needed for communications with Adapter for Psirt.</td>
+    <td style="padding:15px">This call will take the provided property and technique, and return the property encrypted with the technique. This allows the property to be used in the adapterProps section for the credential password so that the password does not have to be in clear text. The adapter will decrypt the property as needed for communications with Adapter for Cisco PSIRT.</td>
     <td style="padding:15px">No</td>
   </tr>
   <tr>
