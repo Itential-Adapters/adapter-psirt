@@ -36,19 +36,37 @@
     "isDeprecated": false
   },
   "brokerSince": "",
+  "authMethods": [
+    {
+      "type": "OAuth",
+      "primary": true
+    }
+  ],
   "documentation": {
     "storeLink": "",
     "npmLink": "https://www.npmjs.com/package/@itentialopensource/adapter-psirt",
-    "repoLink": "https://gitlab.com/itentialopensource/adapters/security/adapter-psirt",
+    "repoLink": "https://gitlab.com/itentialopensource/adapters/adapter-psirt",
     "docLink": "https://docs.itential.com/opensource/docs/cisco-product-security-incident-response-team",
     "demoLinks": [],
+    "trainingLinks": [
+      {
+        "title": "Itential Academy",
+        "link": "https://www.itential.com/itential-academy/"
+      }
+    ],
     "faqLink": "https://docs.itential.com/opensource/docs/troubleshooting-an-adapter",
     "contributeLink": "https://gitlab.com/itentialopensource/adapters/contributing-guide",
     "issueLink": "https://itential.atlassian.net/servicedesk/customer/portals",
     "webLink": "https://www.itential.com/adapters/cisco-psirt/",
-    "vendorLink": "",
-    "productLink": "",
-    "apiLinks": []
+    "vendorLink": "https://www.cisco.com/",
+    "productLink": "https://www.cisco.com/c/dam/en_us/about/doing_business/trust-center/docs/cisco-psirt-infographic.pdf",
+    "apiLinks": [
+      {
+        "title": "Cisco Product Security Incident Response Team (PSIRT) openVuln API",
+        "link": "https://developer.cisco.com/docs/psirt/introduction/",
+        "public": true
+      }
+    ]
   },
   "assets": [],
   "relatedItems": {
