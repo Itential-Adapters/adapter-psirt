@@ -2,7 +2,7 @@
   "id": "Adapter-psirt",
   "type": "Psirt",
   "properties": {
-    "host": "api.cisco.com",
+    "host": "localhost",
     "port": 443,
     "choosepath": "",
     "base_path": "/",
@@ -133,7 +133,7 @@
             "ostypePrefix": "meraki-",
             "port": "{port}",
             "ipaddress": "{ip_addr}",
-            "serial" : "{serial}"
+            "serial": "{serial}"
           }
         }
       ],
@@ -159,7 +159,7 @@
             "ostypePrefix": "meraki-",
             "port": "{port}",
             "ipaddress": "{ip_addr}",
-            "serial" : "{serial}",
+            "serial": "{serial}",
             "id": "{myid}"
           }
         }
@@ -243,7 +243,7 @@
                 "ostypePrefix": "meraki-",
                 "port": "{port}",
                 "ipaddress": "{ip_addr}",
-                "serial" : "{serial}",
+                "serial": "{serial}",
                 "id": "{myid}"
               }
             }
