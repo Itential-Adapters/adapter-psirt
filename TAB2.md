@@ -57,7 +57,7 @@ Sample Properties can be used to help you configure the adapter in the Itential 
 
 ```json
   "properties": {
-    "host": "api.cisco.com",
+    "host": "localhost",
     "port": 443,
     "choosepath": "",
     "base_path": "/",
