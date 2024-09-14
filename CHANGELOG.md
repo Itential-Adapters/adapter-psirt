@@ -1,4 +1,12 @@
 
+## 0.5.3 [09-14-2024]
+
+* add workshop and fix vulnerabilities
+
+See merge request itentialopensource/adapters/adapter-psirt!17
+
+---
+
 ## 0.5.2 [08-14-2024]
 
 * Changes made at 2024.08.14_19:34PM
