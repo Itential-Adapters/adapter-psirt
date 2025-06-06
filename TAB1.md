@@ -1,9 +1,9 @@
 # Overview 
 
-This adapter is used to integrate the Itential Automation Platform (IAP) with the Psirt System. The API that was used to build the adapter for Psirt is usually available in the report directory of this adapter. The adapter utilizes the Psirt API to provide the integrations that are deemed pertinent to IAP. The ReadMe file is intended to provide information on this adapter it is generated from various other Markdown files.
+This adapter is used to integrate the Itential Platform with the Psirt System. The API that was used to build the adapter for Psirt is usually available in the report directory of this adapter. The adapter utilizes the Psirt API to provide the integrations that are deemed pertinent to Itential Platform. The ReadMe file is intended to provide information on this adapter it is generated from various other Markdown files.
 
 ## Details 
-The PSIRT adapter from Itential is used to integrate the Itential Automation Platform (IAP) with Cisco PSIRT to support security-related functions and inititatives within organizations. 
+The PSIRT adapter from Itential is used to integrate the Itential Platform with Cisco PSIRT to support security-related functions and inititatives within organizations. 
 
 With this adapter you have the ability to perform operations with Cisco PSIRT such as:
 

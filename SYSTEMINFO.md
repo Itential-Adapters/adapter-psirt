@@ -12,7 +12,7 @@ We classify PSIRT into the Security domain as PSIRT allows users to retrieve inf
 "PSIRT investigates vulnerabilities across the entire Cisco product portfolio"
 
 ## Why Integrate
-The PSIRT adapter from Itential is used to integrate the Itential Automation Platform (IAP) with Cisco PSIRT to support security-related functions and inititatives within organizations. 
+The PSIRT adapter from Itential is used to integrate the Itential Platform with Cisco PSIRT to support security-related functions and inititatives within organizations. 
 
 With this adapter you have the ability to perform operations with Cisco PSIRT such as:
 
