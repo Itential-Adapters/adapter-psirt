@@ -1,4 +1,12 @@
 
+## 0.10.0 [02-13-2026]
+
+* minor/auto-migrate/20260213-114023
+
+See merge request itentialopensource/adapters/adapter-psirt!36
+
+---
+
 ## 0.5.4 [10-15-2024]
 
 * Changes made at 2024.10.14_21:18PM
