@@ -1,4 +1,12 @@
 
+## 1.0.1 [04-28-2026]
+
+* Changes made at 2026.04.28_13:58PM
+
+See merge request itentialopensource/adapters/adapter-psirt!43
+
+---
+
 ## 1.0.0 [04-13-2026]
 
 * Security Fixes Requiring Node >= 20.19.x made at 2026.04.13_09:22AM
