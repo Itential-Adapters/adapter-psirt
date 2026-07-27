@@ -1,4 +1,12 @@
 
+## 1.0.8 [07-27-2026]
+
+* Changes made at 2026.07.27_10:38AM
+
+See merge request itentialopensource/adapters/adapter-psirt!51
+
+---
+
 ## 1.0.7 [07-22-2026]
 
 * Changes made at 2026.07.22_09:38AM
